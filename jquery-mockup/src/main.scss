@@ -1,4 +1,3 @@
-
 @import "~bootstrap/scss/bootstrap";
 $primary-background: rgb(96, 206, 160);
 
@@ -30,7 +29,10 @@ h3 {
     } 
     h4 {
         text-align: center;
-    }   
+	} 
+	.btn {
+		align-content: center;
+	}  
 }
 
 .footer-distributed{
