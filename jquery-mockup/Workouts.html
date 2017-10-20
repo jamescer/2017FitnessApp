@@ -19,19 +19,35 @@
     <div id="header-placeholder"></div>
 
     <div class="container">
+
         <div class="jumbotron">
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="#">add</a>
-                  <a href="#">remove</a>
-                  <a href="#">Link 3</a>
+            <h3>
+                Here you can manage the workouts/exercises you've completed
+            </h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-center">
+                        <img class="card-img-top" src="healthy foods.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">Healthy Foods</h4>
+                            <p class="card-text">Click here ot explore our suggetsions on how to improve your diet.</p>
+                            <div class="dropdown">
+                                    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <a href="#">Add</a>
+                                        <a href="#">Remove</a>
+                                        <a href="#">Edit</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </div>
+           
         </div>
     </div>
     <div id="footer-placeholder"></div>
-    
+
     <script>
         var navProperties = {
             mainNav: "_nav.html",
@@ -44,10 +60,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
         crossorigin="anonymous"></script>
 
-        <script src="dist/bundle.js" >
-        </script>
+    <script src="dist/bundle.js">
+    </script>
+    <script>/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
 
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }</script>
 </body>
 
 </html>
