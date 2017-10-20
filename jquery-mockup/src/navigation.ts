@@ -18,6 +18,5 @@ $(function () {
 });
 $(function () {
     $("#footer-placeholder").load("_footer.html", function () { 
-        
     });
 });

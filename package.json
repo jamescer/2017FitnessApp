@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "node-sass jquery-mockup/src --output jquery-mockup/dist --watch",
-    "webpack:main": "webpack jquery-mockup/src/main.js jquery-mockup/dist/bundle.js --optimize-minimize"
+    "webpack:main":"webpack jquery-mockup/src/main.js jquery-mockup/dist/bundle.js --optimize-minimize"
+    ,
+    "w": "webpack jquery-mockup/src/main.js jquery-mockup/dist/bundle.js --optimize-minimize"
   },
   "repository": {
     "type": "git",
