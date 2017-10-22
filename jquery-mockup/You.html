@@ -1,0 +1,102 @@
+<html>
+
+<head>
+
+
+    <title>Workouts</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="dist/main.bundle.css">
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <div class="container">
+
+        <div class="jumbotron">
+                <h1 id="greetings" class="display-3">Hello, world!</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4">
+               
+
+
+            <div class="row" id="workouts">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header">
+                            Done Exercises
+                        </div>
+                        <ul class="list-group list-group-flush" id="my-Done">
+                            <li class="list-group-item">test1</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                        <div class="card-header">
+                            "Can Do" Exercises
+                        </div>
+                        <ul class="list-group list-group-flush" id="my-canDo">
+                            <li class="list-group-item">test2</li>
+
+                    </div>
+                    </ul>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        var navProperties = {
+            mainNav: "_nav.html",
+            currentSection: "You",
+        }
+    </script>
+    <div id="scripts-placeholder"></div>
+    <script src="dist/bundle.js">
+    </script>
+
+    <script>
+        // If the user clicks Add
+
+    </script>
+
+
+
+    <script>/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        function myFunction2() {
+            document.getElementById("myDropdown2").classList.toggle("show");
+        } function myFunction3() {
+            document.getElementById("myDropdown3").classList.toggle("show");
+        }
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }</script>
+</body>
+
+</html>

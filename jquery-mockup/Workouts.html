@@ -1,16 +1,11 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-
-
-    <title>Workouts</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-        crossorigin="anonymous">
-    <!-- My CSS -->
+    <title>Home Page</title>
     <link rel="stylesheet" href="dist/main.bundle.css">
 </head>
 
@@ -20,68 +15,64 @@
 
     <div class="container">
 
-        <div class="jumbotron">
-            <h3>
-                Here you can manage the workouts/exercises you've completed
-            </h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card-center">
-                        <img class="card-img-top" src="healthy foods.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h4 class="card-title">Healthy Foods</h4>
-                            <p class="card-text">Click here ot explore our suggetsions on how to improve your diet.</p>
-                            <div class="dropdown">
-                                    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                                    <div id="myDropdown" class="dropdown-content">
-                                        <a href="#">Add</a>
-                                        <a href="#">Remove</a>
-                                        <a href="#">Edit</a>
-                                    </div>
-                                </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        Players
+                    </div>
+                    <ul class="list-group list-group-flush" id="players">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        My Quotes
+                    </div>
+                    <ul class="list-group list-group-flush" id="my-quotes">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="download.png" alt="Card image cap" id="picture">
+                        <a href="#" class="btn btn-primary" id="cmd-flip">Flip a new card</a>
+
+                        <div class="card">
+                            <div class="card-header">
+                                Played Quotes
+                            </div>
+                            <ul class="list-group list-group-flush" id="played-quotes">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
                         </div>
+
                     </div>
                 </div>
+
             </div>
-           
         </div>
     </div>
-    <div id="footer-placeholder"></div>
 
     <script>
         var navProperties = {
             mainNav: "_nav.html",
-            currentSection: "Workouts",
-        }
+            currentSection: "Workouts"
+        };
     </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-        crossorigin="anonymous"></script>
-
+    <div id="scripts-placeholder"></div>
     <script src="dist/bundle.js">
     </script>
-    <script>/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }</script>
 </body>
 
 </html>

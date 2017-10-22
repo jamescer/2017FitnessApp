@@ -16,7 +16,15 @@ $(function () {
     })
 
 });
+$('#Adding').on('click', function (event) {
+    event.preventDefault(); // To prevent following the link (optional)
+    var entry = window.prompt("bitch", "sup");
+});
 $(function () {
-    $("#footer-placeholder").load("_footer.html", function () { 
+    $("#footer-placeholder").load("_footer.html", function () {
+    });
+});
+$(function () {
+    $("#scripts-placeholder").load("_scripts.html", function () {
     });
 });

@@ -1,4 +1,4 @@
 import 'bootstrap'
  import './navigation.ts';
- import './game.ts';
+ import './Workouts.ts';
 import './main.scss';
