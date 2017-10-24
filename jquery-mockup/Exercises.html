@@ -32,8 +32,8 @@
                         <li class="list-group-item " id="weight">Weight: 225</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a onclick="addToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
-                        <a onclick="addToCanDo()" id="Adding4" class="btn btn-primary">Add to "can-do"</a>
+                        <a id="Adding3" class="btn btn-primary">Add to Done</a>
+                        <a id="Adding4" class="btn btn-primary">Add to "can-do"</a>
                     </div>
                 </div>
                 <div class="card" style="width: 20rem;">
@@ -48,8 +48,8 @@
                         <li class="list-group-item " id="weight">Weight: 245</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a onclick="addToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
-                        <a onclick="addToCanDo()" id="Adding4" class="btn btn-primary">Add to "can-do"</a>
+                        <a id="Adding3" class="btn btn-primary">Add to Done</a>
+                        <a id="Adding4" class="btn btn-primary">Add to "can-do"</a>
                     </div>
 
                 </div>
@@ -65,8 +65,8 @@
                         <li class="list-group-item " id="weight">Weight: 145</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a onclick="addToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
-                        <a onclick="addToCanDo()" id="Adding4" class="btn btn-primary">Add to "can-do"</a>
+                        <a id="Adding3" class="btn btn-primary">Add to Done</a>
+                        <a id="Adding4" class="btn btn-primary">Add to "can-do"</a>
                     </div>
 
                 </div>
@@ -82,13 +82,9 @@
                         <li class="list-group-item " id="weight">Weight: 30</li>
                     </ul>
                     <div class="card-body text-center">
-<<<<<<< Updated upstream
-                        <a onclick="addToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
-                        <a onclick="addToCanDo()" id="Adding4" class="btn btn-primary">Add to "can-do"</a>
-=======
-                        <a onclick="inc()"id="Adding1" class="btn btn-primary">Add to Done</a>
-                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
->>>>>>> Stashed changes
+                        <a id="Adding3" class="btn btn-primary">Add to Done</a>
+                        <a id="Adding4" class="btn btn-primary">Add to "can-do"</a>
+
                     </div>
 
                 </div>
@@ -97,27 +93,17 @@
         <p id="add1">
             added to done
         </p>
-<<<<<<< Updated upstream
         <p id="addedtocando">
             added to cando
         </p>
         <p id="lastclicked">
             last clicked
         </p>
-=======
-        <p id="add2">
-            added to cando
-            </p>
-            <p id="last1">
-                last added
-                </p>
->>>>>>> Stashed changes
     </div>
 
     <div id="footer-placeholder"></div>
 
     <script>
-<<<<<<< Updated upstream
         function addCanDo() {
             $(function () {
                 $("#addedtocando").html(` <p>done: ${Exercises.candocounter++}</p>`);
@@ -132,13 +118,6 @@
         }
     </script>
 
-=======
-        function inc() {
-            $("#add1").html(`<h>done: ${this.donecounter++}</p>`);
-            $("#add2").html(`<h>done: ${this.candocounter++}</p>`);
-        }
-    </script>
->>>>>>> Stashed changes
     <script>
         var navProperties = {
             mainNav: "_nav.html",

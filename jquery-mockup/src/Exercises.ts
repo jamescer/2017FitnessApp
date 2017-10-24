@@ -1,12 +1,8 @@
 import * as $ from "jquery";
-<<<<<<< Updated upstream
 var donecounter: number;
 var candocounter: number;
 candocounter = 0;
 donecounter = 0;
-=======
-var donecounter
->>>>>>> Stashed changes
 export class Quote {
   text: string;
 }
@@ -61,7 +57,6 @@ export class Person {
   drawPicture() {
     $("#picture").attr("src", this.picture);
   }
-  
 }
 $("#Adding1").on("click", function(event) {
   event.preventDefault();
