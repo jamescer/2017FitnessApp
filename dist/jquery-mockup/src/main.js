@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 require("bootstrap");
 require("./navigation.ts");
-require("./Workouts.ts");
+require("./Exercises.ts");
+require("./Exercises.js");
 require("./main.scss");
 //# sourceMappingURL=main.js.map

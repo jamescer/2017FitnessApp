@@ -32,8 +32,8 @@
                         <li class="list-group-item ">Weight: 225</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a id="Adding1" class="btn btn-primary">Add to Done</a>
-                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
+                        <a onclick="addToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
+                        <a onclick="addToCanDo()" id="Adding4" class="btn btn-primary">Add to "can-do"</a>
                     </div>
                 </div>
                 <div class="card" style="width: 20rem;">
@@ -48,8 +48,8 @@
                         <li class="list-group-item ">Weight: 245</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a id="Adding1" class="btn btn-primary">Add to Done</a>
-                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
+                        <a onclick="addToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
+                        <a onclick="addToCanDo()" id="Adding4" class="btn btn-primary">Add to "can-do"</a>
                     </div>
 
                 </div>
@@ -65,8 +65,8 @@
                         <li class="list-group-item " id="weight">Weight: 145</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a id="Adding1" class="btn btn-primary">Add to Done</a>
-                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
+                        <a onclick="addToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
+                        <a onclick="addToCanDo()" id="Adding4" class="btn btn-primary">Add to "can-do"</a>
                     </div>
 
                 </div>
@@ -82,8 +82,8 @@
                         <li class="list-group-item " id="weight">Weight: 30</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a id="Adding1" class="btn btn-primary">Add to Done</a>
-                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
+                        <a onclick="addToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
+                        <a onclick="addToCanDo()" id="Adding4" class="btn btn-primary">Add to "can-do"</a>
                     </div>
 
                 </div>
@@ -92,13 +92,30 @@
         <p id="addedtodone">
             added to done
         </p>
-        <pi id="addedtocando">
+        <p id="addedtocando">
             added to cando
-            </p>
+        </p>
+        <p id="lastclicked">
+            last clicked
+        </p>
     </div>
 
     <div id="footer-placeholder"></div>
 
+    <script>
+        function addCanDo() {
+            $(function () {
+                $("#addedtocando").html(` <p>done: ${Exercises.candocounter++}</p>`);
+            });
+        }
+    </script>
+    <script>
+        function addDone() {
+            $(function () {
+                $("#addedtodone").html(` <p>cando: ${Exercises.donecounter++}</p>`);
+            });
+        }
+    </script>
 
     <script>
         var navProperties = {

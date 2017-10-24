@@ -7,7 +7,7 @@ var Exercise = /** @class */ (function() {
     this.reps = repCount;
     this.sets = setCount;
   }
-  return Routine;
+  return Exercise;
 })();
 exports.Exercise = Exercise;
 var Person = /** @class */ function() {
@@ -19,7 +19,7 @@ var Person = /** @class */ function() {
   Person.prototype.drawCanDo = function() {
     var index = 0;
     $("#my-canDo").html(
-      this.routineList
+      this.canDo
         .map(function(x) {
           return '<li class="list-group-item"> Name: ${x.name}: Sets: ${x.sets}, Reps: ${x.reps}, Weight ${x.weight}</li>';
         })
@@ -32,31 +32,29 @@ var Person = /** @class */ function() {
   };
   Person.prototype.drawDone = function() {
     $("#my-Done").html(
-      this.myRoutines
+      this.Done
         .map(function(x) {
-          return '<li class="list-group-item">${x.name}: Sets: ${x.sets}, Reps: ${x.reps}</li>';
+          return '<li class="list-group-item">${x.name}: Sets: ${x.sets}, Reps: ${x.reps}, Weight: ${x.weight}</li>';
         })
         .join("")
     );
   };
 };
 exports.Person = Person;
-var P = Person;
-P.drawCanDo();
-P.drawDone();
+const P = Person;
 $(".btn btn-primary").click(function(e) {
   e.preventDefault();
   //const workoutID = e.target.id;
-  var NAME = e.getElementById("name");
-  var SETS = e.getElementById("sets");
-  var REPS = e.getElementById("reps");
-  var WEIGHT = e.getElementById("weight");
-  var workoutName = e.target.textContent;
-  document.getElementById("default-message").innerHTML = "";
+  var NAME = e.getElementById("name").textContent;
+  var SETS = e.getElementById("sets").value;
+  var REPS = e.getElementById("reps").value;
+  var WEIGHT = e.getElementById("weight").value;
+  // var workoutName = e.target.textContent;
+  // document.getElementById("default-message").innerHTML = "";
   // var reps = e.target.textContent.
   //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
   var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
   P.done.push(newE);
-  console.log(JSON.stringify(P.done));
+  console.log(JSON.stringify(P.done.name));
   P.drawDone();
 });
