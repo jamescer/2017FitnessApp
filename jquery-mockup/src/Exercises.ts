@@ -56,7 +56,7 @@ export class Person {
   }
 }
 
-// Controller
+// Controller here
 const me = new Person();
 me.drawDone();
 me.drawCanDo();
