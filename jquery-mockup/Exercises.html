@@ -18,8 +18,6 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-3">Exercises</h1>
-
-
             <div class="card-deck">
 
                 <div class="card" style="width: 20rem;">
@@ -34,8 +32,8 @@
                         <li class="list-group-item ">Weight: 225</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a onclick="Adding" id="Adding1" class="btn btn-primary">Add</a>
-
+                        <a id="Adding1" class="btn btn-primary">Add to Done</a>
+                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
                     </div>
                 </div>
                 <div class="card" style="width: 20rem;">
@@ -50,20 +48,58 @@
                         <li class="list-group-item ">Weight: 245</li>
                     </ul>
                     <div class="card-body text-center">
-                        <a onclick="Adding" id="Adding2" class="btn btn-primary">Add</a>
+                        <a id="Adding1" class="btn btn-primary">Add to Done</a>
+                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
+                    </div>
+
+                </div>
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="images/BentOverRow.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title" id="name">Bent Over Rows</h4>
+                        <p class="card-text text-center">Bent Over Rows are a great back exercise.</p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item " id="sets">Sets: 3</li>
+                        <li class="list-group-item " id="reps">Reps: 8</li>
+                        <li class="list-group-item " id="weight">Weight: 145</li>
+                    </ul>
+                    <div class="card-body text-center">
+                        <a id="Adding1" class="btn btn-primary">Add to Done</a>
+                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
+                    </div>
+
+                </div>
+                <div class="card" style="width: 20rem;">
+                    <img class="card-img-top" src="images/BicepCurl.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-title">Bicep Curls</h4>
+                        <p class="card-text text-center">Bicep curls really tear your bicep muscles.</p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item " id="sets">Sets: 3</li>
+                        <li class="list-group-item " id="reps">Reps: 8</li>
+                        <li class="list-group-item " id="weight">Weight: 30</li>
+                    </ul>
+                    <div class="card-body text-center">
+                        <a id="Adding1" class="btn btn-primary">Add to Done</a>
+                        <a id="Adding2" class="btn btn-primary">Add to "can-do"</a>
                     </div>
 
                 </div>
             </div>
         </div>
+        <p id="addedtodone">
+            added to done
+        </p>
+        <pi id="addedtocando">
+            added to cando
+            </p>
     </div>
 
     <div id="footer-placeholder"></div>
 
 
-    <script>
-        //Change color
-    </script>
     <script>
         var navProperties = {
             mainNav: "_nav.html",

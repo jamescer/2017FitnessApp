@@ -1,4 +1,5 @@
 import 'bootstrap'
  import './navigation.ts';
- import './Workouts.ts';
+ import './Exercises.ts';
+ import './Exercises.js';
 import './main.scss';
