@@ -15,6 +15,7 @@ var Person = /** @class */ function() {
     this.done = [];
     this.canDo = [];
   }
+  
 
   Person.prototype.drawCanDo = function() {
     var index = 0;
@@ -32,17 +33,28 @@ var Person = /** @class */ function() {
   };
   Person.prototype.drawDone = function() {
     $("#my-Done").html(
+<<<<<<< Updated upstream
       this.Done
         .map(function(x) {
           return '<li class="list-group-item">${x.name}: Sets: ${x.sets}, Reps: ${x.reps}, Weight: ${x.weight}</li>';
+=======
+      this.done
+        .map(function(x) {
+          return '<li class="list-group-item">${x.name}: Sets: ${x.sets}, Reps: ${x.reps}, Weight ${x.weight}</li>';
+>>>>>>> Stashed changes
         })
         .join("")
     );
   };
 };
 exports.Person = Person;
+<<<<<<< Updated upstream
 const P = Person;
 $(".btn btn-primary").click(function(e) {
+=======
+var P = Person;
+$("#Adding1").on("click", function(e) {
+>>>>>>> Stashed changes
   e.preventDefault();
   //const workoutID = e.target.id;
   var NAME = e.getElementById("name").textContent;
@@ -57,4 +69,34 @@ $(".btn btn-primary").click(function(e) {
   P.done.push(newE);
   console.log(JSON.stringify(P.done.name));
   P.drawDone();
+});
+$("#Adding1").on("click", function(e) {
+  e.preventDefault();
+  //const workoutID = e.target.id;
+  var NAME = e.getElementById("name");
+  var SETS = e.getElementById("sets");
+  var REPS = e.getElementById("reps");
+  var WEIGHT = e.getElementById("weight");
+  var workoutName = e.target.textContent;
+  document.getElementById("default-message").innerHTML = "";
+  // var reps = e.target.textContent.
+  //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
+  var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
+  P.done.push(newE);
+  console.log(JSON.stringify(P.done));
+  P.drawDone();
+});
+$("#Adding2").on("click", function(e) {
+  e.preventDefault();
+  //const workoutID = e.target.id;
+  var NAME = e.getElementById("name").textContent;
+  var SETS = e.getElementById("sets").value;
+  var REPS = e.getElementById("reps").value;
+  var WEIGHT = e.getElementById("weight").value;
+  //var workoutName = e.target.textContent;
+  //document.getElementById("default-message").innerHTML = "";
+  // var reps = e.target.textContent.
+  //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
+  //var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
+  $("#last1").html('<h>done: ${NAME}, ${SETS}, ${REPS}, ${WEIGHT},  </p>');
 });
