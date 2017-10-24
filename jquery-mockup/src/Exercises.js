@@ -21,7 +21,7 @@ var Person = /** @class */ function() {
     $("#my-canDo").html(
       this.routineList
         .map(function(x) {
-          return '<li class="list-group-item">${x.name}: Sets: ${x.sets}, Reps: ${x.reps}</li>';
+          return '<li class="list-group-item"> Name: ${x.name}: Sets: ${x.sets}, Reps: ${x.reps}, Weight ${x.weight}</li>';
         })
         .join("")
     );
