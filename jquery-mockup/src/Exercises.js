@@ -61,31 +61,29 @@ $(".btn btn-primary").click(function(e) {
 $("#Adding1").click(function(e) {
   e.preventDefault();
   //const workoutID = e.target.id;
-  var NAME = e.getElementById("name");
-  var SETS = e.getElementById("sets");
-  var REPS = e.getElementById("reps");
-  var WEIGHT = e.getElementById("weight");
-  var workoutName = e.target.textContent;
-  document.getElementById("default-message").innerHTML = "";
+  var NAME = e.target.getElementById("name");
+  var SETS = e.target.getElementById("sets");
+  var REPS = e.target.getElementById("reps");
+  var WEIGHT = e.target.getElementById("weight");
+  // var workoutName = e.target.textContent;
+  // document.getElementById("default-message").innerHTML = "";
   // var reps = e.target.textContent.
   //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
   var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
   P.done.push(newE);
   console.log(JSON.stringify(P.done));
   P.drawDone();
-  $("#last1").html("<h>done: ${NAME}, ${SETS}, ${REPS}, ${WEIGHT},  </p>");
 });
 $("#Adding2").click(function(e) {
   e.preventDefault();
   //const workoutID = e.target.id;
-  var NAME = e.getElementById("name").textContent;
-  var SETS = e.getElementById("sets").value;
-  var REPS = e.getElementById("reps").value;
-  var WEIGHT = e.getElementById("weight").value;
+  var NAME = e.target.getElementById("name").textContent;
+  var SETS = e.target.getElementById("sets").value;
+  var REPS = e.target.getElementById("reps").value;
+  var WEIGHT = e.target.getElementById("weight").value;
   //var workoutName = e.target.textContent;
   //document.getElementById("default-message").innerHTML = "";
   // var reps = e.target.textContent.
   //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
   //var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
-  $("#last1").html("<h>done: ${NAME}, ${SETS}, ${REPS}, ${WEIGHT},  </p>");
 });

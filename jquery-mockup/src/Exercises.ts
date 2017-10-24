@@ -22,9 +22,10 @@ export class Exercise {
 
 export class Person {
   name: string = "James Cerniglia";
-  // done: Exercise[] = [];
-  done: Exercise[] = [{ name: "Bicep Curls", reps: 6, sets: 3, weight: 30 }];
-  canDo: Exercise[] = [{ name: "Bent over Row", reps: 6, sets: 3, weight: 30 }];
+  done: Exercise[] = [];
+  canDo: Exercise[] = [];
+  // done: Exercise[] = [{ name: "Bicep Curls", reps: 6, sets: 3, weight: 30 }];
+  // canDo: Exercise[] = [{ name: "Bent over Row", reps: 6, sets: 3, weight: 30 }];
   weight: number;
   picture: string;
   constructor() {
@@ -33,7 +34,7 @@ export class Person {
   }
   drawDone() {
     $("#my-Done").html(
-      this.done
+      me.done
         .map(
           x =>
             `<li class="list-group-item">${x.name}: Sets: ${x.sets}, Reps: ${x.reps}</li>`
@@ -43,7 +44,7 @@ export class Person {
   }
   drawCanDo() {
     $("#my-canDo").html(
-      this.canDo
+      me.canDo
         .map(
           y =>
             `<li class="list-group-item">${y.name}: Sets: ${y.sets}, Reps: ${y.reps}</li>`
@@ -58,19 +59,43 @@ export class Person {
     $("#picture").attr("src", this.picture);
   }
 }
-$("#Adding1").on("click", function(event) {
-  event.preventDefault();
+
+$("#Adding1").on("click", function() {
   $(function() {
     donecounter++;
-    $("#addedtodone").html(` <p>done: ${donecounter}</p>`);
+    $("#add1").html(` <p>done: ${donecounter}</p>`);
+    $("#last2").html(
+      me.canDo
+        .map(
+          y =>
+            `<li class="list-group-item">${y.name}: Sets: ${y.sets}, Reps: ${y.reps}</li>`
+        )
+        .join("")
+    );
   });
 });
-$("#Adding2").on("click", function(event) {
-  event.preventDefault();
+
+$("#Adding2").on("click", function() {
   $(function() {
     candocounter++;
-    $("#addedtocando").html(`<p>cando: ${candocounter}</p>`);
+    $("#add2").html(`<p>cando: ${candocounter}</p>`);
   });
+});
+$("#Adding2").on("click", function() {
+  $(function() {
+    $("#last2").html(
+      me.canDo
+        .map(
+          y =>
+            `<li class="list-group-item">${y.name}: Sets: ${y.sets}, Reps: ${y.reps}, Weight: ${y.weight}</li>`
+        )
+        .join("")
+    );
+  });
+});
+
+$("#Adding1").on("click", function() {
+  
 });
 
 // Controller here
