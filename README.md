@@ -1,5 +1,5 @@
 # 2017fall
-what do you meme
+Healthy Lifting
 
-## This is a game
-Based on Bubble Talk
+## This is a Fitness tracking webiste
+Healthy Lifting is a website used to track exercises, macros and discover a new healthy lifestyle.
