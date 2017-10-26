@@ -10,16 +10,13 @@ $(function () {
     });
 
 
-    $(".btn-primary").click(function () {
-        $(this).closest(".col-md-4").css({ 'max-width': 'none' })
-            .animate({ 'flex-basis': '100%' })
-    })
+    // $(".btn-primary").click(function () {
+    //     $(this).closest(".col-md-4").css({ 'max-width': 'none' })
+    //         .animate({ 'flex-basis': '100%' })
+    // })
 
 });
-$('#Adding').on('click', function (event) {
-    event.preventDefault(); // To prevent following the link (optional)
-    var entry = window.prompt("bitch", "sup");
-});
+
 $(function () {
     $("#footer-placeholder").load("_footer.html", function () {
     });

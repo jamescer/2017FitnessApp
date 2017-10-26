@@ -54,6 +54,9 @@ $(".btn btn-primary").click(function(e) {
   // var reps = e.target.textContent.
   //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
   var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
+  $("#last2").html(
+    '<li class="list-group-item"> ${NAME}: Sets: ${SETS}, Reps: ${REPS}, Weight: ${WEIGHT}</li>'
+  );
   P.done.push(newE);
   console.log(JSON.stringify(P.done.name));
   P.drawDone();
@@ -61,14 +64,15 @@ $(".btn btn-primary").click(function(e) {
 $("#Adding1").click(function(e) {
   e.preventDefault();
   //const workoutID = e.target.id;
-  var NAME = e.target.getElementById("name");
-  var SETS = e.target.getElementById("sets");
-  var REPS = e.target.getElementById("reps");
-  var WEIGHT = e.target.getElementById("weight");
+  var NAME = e.target.getElementById("name").textContent;
+  var SETS = e.target.getElementById("sets").value;
+  var REPS = e.target.getElementById("reps").value;
+  var WEIGHT = e.target.getElementById("weight").value;
   // var workoutName = e.target.textContent;
   // document.getElementById("default-message").innerHTML = "";
   // var reps = e.target.textContent.
   //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
+
   var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
   P.done.push(newE);
   console.log(JSON.stringify(P.done));
@@ -85,5 +89,11 @@ $("#Adding2").click(function(e) {
   //document.getElementById("default-message").innerHTML = "";
   // var reps = e.target.textContent.
   //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
-  //var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
+  $("#last2").html(
+    '<li class="list-group-item">${y.name}: Sets: ${y.sets}, Reps: ${y.reps}, Weight: ${y.weight}</li>'
+  );
+  var newE = new Exercise(NAME, SETS, REPS, WEIGHT);
+  P.canDo.push(newE);
+  console.log(JSON.stringify(P.canDo));
+  P.drawCanDo();
 });

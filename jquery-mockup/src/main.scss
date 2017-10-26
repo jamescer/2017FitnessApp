@@ -5,6 +5,10 @@ $monospace: "Courier New",
 Courier,
 monospace;
 .navbar {
+    .li {
+        text-align: center;
+        align-content: center;
+    }
     span {
         color: $primary-background;
     }
@@ -15,12 +19,16 @@ monospace;
 
 .row {
     .card {
+       
         //color: $primary-background;.list-group, .list-group-flush,
         .list-group-item:focus,
         .list-group-item:hover {
             background-color: $secondary-background;
         }
     }
+    // .card:hover {
+    //     background-color: #042e1d;
+    // }
 }
 
 .card {
