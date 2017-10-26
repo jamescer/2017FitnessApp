@@ -1,43 +1,21 @@
 "use strict";
 exports.__esModule = true;
 var $ = require("jquery");
-var Exercise = /** @class */ (function() {
-  function Exercise(name, t, s, r, w) {
-    this.name = name;
-    this.time = t;
-    this.sets = s;
-    this.reps = r;
-    this.weight = w;
-  }
-  return Exercise;
-})();
-exports.Exercise = Exercise;
+
 var Person = /** @class */ (function(F) {
-  function Person() {
-    this.name = "James Cerniglia";
-    this.exerciseList = [
-      {
-        name: "Weight Lifting",
-        time: "0 minutes",
-        sets: 0,
-        reps: 0,
-        weight: 0
-      },
-      { name: "Jogging", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
-      { name: "Swimming", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
-      { name: "Cycling", time: "0 minutes", sets: 0, reps: 0, weight: 0 }
-    ];
-  }
+  function Person() {}
 
   Person.prototype.drawGreeting = function() {
-    $("#greetings").html(`<h1 class="display-3">Hello, ${this.name}</li>`);
+    $("#greetings")
+      .html(`<h1 class="display-3">Hello, ${this.name}</li>`)
+      .join("");
   };
   Person.prototype.drawExercises = function() {
     var index = 0;
     $("#defaultExercises").html(
       this.exerciseList
         .map(function(x) {
-          return '<li class="list-group-item">' + x.name + "</li>";
+          return '<li class="list-group-item"  href="">' + x.name + "</li>";
         })
         .join("")
     );
@@ -54,13 +32,13 @@ var Person = /** @class */ (function(F) {
           return (
             '<li class="list-group-item">' +
             x.name +
-            ", time:" +
+            ", time: " +
             x.time +
-            ", sets:" +
+            ", sets: " +
             x.sets +
-            ", reps:" +
+            ", reps: " +
             x.reps +
-            ", weight:" +
+            ", weight: " +
             x.weight +
             "</li>"
           );
@@ -80,3 +58,4 @@ exports.Person = Person;
 var person = new Person();
 person.drawExercises();
 person.drawGreeting();
+

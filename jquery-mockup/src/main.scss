@@ -5,6 +5,7 @@ $dark: #042e1d;
 $monospace: "Courier New",
 Courier,
 monospace;
+
 .navbar {
     .li {
         text-align: center;
@@ -42,6 +43,10 @@ monospace;
         align-items: center;
         color: white;
     }
+    .card::shadow{
+        background: $dark;
+
+    }
 }
 
 .input-group-addon {
@@ -60,10 +65,10 @@ header {
 
 .jumbotron {
     background: rgb(181, 241, 215);
-}
-
-.jumbotron h3 {
-    text-align: center;
+    align-self: center;
+    h3 {
+        text-align: center;
+    }
 }
 
 
@@ -144,14 +149,14 @@ header {
     .card-body {
         flex: 1 1 auto;
         padding: 0.5rem;
-        background: #5f8b7d;
+        background: #98ebcf;
     }
     .btn-primary {
         font-family: $monospace;
     }
-    .btn-primary:focus {
-        background: $dark;
-    }
+    // .btn-primary:focus {
+    //     //background: $dark;
+    // }
     h4 {
         text-align: center;
     }
@@ -159,7 +164,9 @@ header {
         align-content: center;
     }
 }
-
+output {
+    display: inline;
+}
 .footer-distributed {
     background-color: #042e1d; //	box-shadow: 0 1px 1px 0 rgba(3, 82, 58, 0.12);
     box-sizing: border-box;

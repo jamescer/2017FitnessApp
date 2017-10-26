@@ -17,12 +17,21 @@ export class Exercise {
 }
 
 export class Person {
-  name: string; 
+  name: string;
   exerciseList: Exercise[] = [
-    { name: "Weight Lifting", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
-    { name: "Jogging", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
-    { name: "Swimming", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
-    { name: "Cycling", time: "0 minutes", sets: 0, reps: 0, weight: 0 }
+    { name: "Bench Press", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
+    { name: "Deadlift", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
+    { name: "Squat", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
+    { name: "Leg Press", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
+    { name: "Bicep Curl", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
+    { name: "Overhead Press", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
+    {
+      name: "Inclined Bench Press",
+      time: "0 minutes",
+      sets: 0,
+      reps: 0,
+      weight: 0
+    }
   ];
   myExercises: Exercise[] = [];
   drawGreeting() {
@@ -43,13 +52,15 @@ export class Person {
       this.myExercises
         .map(function(x) {
           return (
-            '<li class="list-group-item">' +x.name +", time:" +
+            '<li class="list-group-item">' +
+            x.name +
+            ", time: " +
             x.time +
-            ", sets:" +
+            ", sets: " +
             x.sets +
-            ", reps:" +
+            ", reps: " +
             x.reps +
-            ", weight:" +
+            ", weight: " +
             x.weight +
             "</li>"
           );
@@ -69,9 +80,21 @@ person.drawExercises();
 $(".list-group-item").click(function(e) {
   e.preventDefault();
   var t = (<HTMLInputElement>document.getElementById("t")).value;
-  var s = parseFloat((<HTMLInputElement>document.getElementById("s")).value);
   var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
+  var s = parseFloat((<HTMLInputElement>document.getElementById("s")).value);
   var w = parseFloat((<HTMLInputElement>document.getElementById("w")).value);
+  if (t.length < 1) {
+    t = "0 minutes";
+  }
+  if (isNaN(s)) {
+    s = 0;
+  }
+  if (isNaN(r)) {
+    r = 0;
+  }
+  if (isNaN(w)) {
+    w = 0;
+  }
   var workoutName = e.target.textContent;
   var newRoutine = new Exercise(workoutName, t, s, r, w);
   person.myExercises.push(newRoutine);
@@ -79,15 +102,25 @@ $(".list-group-item").click(function(e) {
   person.drawmyExercises();
 });
 
-$(".btn").click(function(e) {
+$(".btn .btn-primary").click(function(e) {
   e.preventDefault();
   var t = (<HTMLInputElement>document.getElementById("t")).value;
-  var s = parseFloat((<HTMLInputElement>document.getElementById("s")).value);
   var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
+  var s = parseFloat((<HTMLInputElement>document.getElementById("s")).value);
   var w = parseFloat((<HTMLInputElement>document.getElementById("w")).value);
-  var workoutName = (<HTMLInputElement>e.target.ownerDocument.getElementById(
-    "name"
-  )).value;
+  if (t.length < 1) {
+    t = "0 minutes";
+  }
+  if (isNaN(s)) {
+    s = 0;
+  }
+  if (isNaN(r)) {
+    r = 0;
+  }
+  if (isNaN(w)) {
+    w = 0;
+  }
+  var workoutName = "sup";
   var newRoutine = new Exercise(workoutName, t, s, r, w);
   person.myExercises.push(newRoutine);
   console.log(JSON.stringify(person.exerciseList));
