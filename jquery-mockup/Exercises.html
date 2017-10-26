@@ -18,22 +18,18 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-3">Exercises</h1>
+            <hr class="my-4">
             <div class="card-deck">
-
                 <div class="card" style="width: 20rem;">
                     <img class="card-img-top" src="images/Deadlift.gif" alt="Card image cap">
                     <div class="card-body">
                         <h4 class="card-title" id="name">Deadlifts</h4>
                         <p class="card-text text-center">Squats are a great glute exercise.</p>
                     </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <li class="list-group-item" id="sets">Sets: 3</li>
-                        <li class="list-group-item" id="reps">Reps: 8</li>
-                        <li class="list-group-item " id="weight">Weight: 225</li>
-                    </ul>
-                    <div class="card-body text-center">
+                   <div class="card-body text-center">
                         <a onclick="AddToDone()" id="Adding1" class="btn btn-primary">Add to Done</a>
-                      </div>
+                    </div>
+
                 </div>
                 <div class="card" style="width: 20rem;">
                     <img class="card-img-top" src="images/Squat.gif" alt="Card image cap">
@@ -41,14 +37,9 @@
                         <h4 class="card-title" id="name">Squats</h4>
                         <p class="card-text text-center">Squats are a great glute exercise.</p>
                     </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <li class="list-group-item " id="sets">Sets: 3</li>
-                        <li class="list-group-item " id="reps">Reps: 8</li>
-                        <li class="list-group-item " id="weight">Weight: 245</li>
-                    </ul>
                     <div class="card-body text-center">
                         <a onclick="AddToDone()" id="Adding1" class="btn btn-primary">Add to Done</a>
-                       </div>
+                    </div>
 
                 </div>
                 <div class="card" style="width: 20rem;">
@@ -57,14 +48,10 @@
                         <h4 class="card-title" id="name">Bent Over Rows</h4>
                         <p class="card-text text-center">Bent Over Rows are a great back exercise.</p>
                     </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <li class="list-group-item " id="sets">Sets: 3</li>
-                        <li class="list-group-item " id="reps">Reps: 8</li>
-                        <li class="list-group-item " id="weight">Weight: 145</li>
-                    </ul>
                     <div class="card-body text-center">
                         <a onclick="AddToDone()" id="Adding1" class="btn btn-primary">Add to Done</a>
-                        </div>
+                    </div>
+
 
                 </div>
                 <div class="card" style="width: 20rem;">
@@ -73,64 +60,56 @@
                         <h4 class="card-title" id="name">Bicep Curls</h4>
                         <p class="card-text text-center">Bicep curls really tear your bicep muscles.</p>
                     </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <li class="list-group-item " id="sets">Sets: 3</li>
-                        <li class="list-group-item " id="reps">Reps: 8</li>
-                        <li class="list-group-item " id="weight">Weight: 30</li>
-                    </ul>
                     <div class="card-body text-center">
                         <a onclick="AddToDone()" id="Adding1" class="btn btn-primary">Add to Done</a>
-                       </div>
+                    </div>
 
-                </div>
-            </div>
-            <h1 class="display-3"></h1>
-            <div class="row" id="workouts">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-header">
-                            Done Exercises
-                        </div>
-                        <ul class="list-group list-group-flush" id="my-Done">
-                            <li class="list-group-item">test1</li>
-                        </ul>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            "Can Do" Exercises
+                <h1 class="display-3"></h1>
+                <div class="row" id="workouts">
+                    <div class="col-md-5 ">
+                        <div class="card">
+                            <div class="card-header" id="Finished Exercises">
+                                My finished Exercises
+                            </div>
+                            <ul class="list-group list-group-flush" id="myExercises">
+                                <li class="list-group-item" id="default-message">You haven't completed any exercises.</li>
+                            </ul>
                         </div>
-                        <ul class="list-group list-group-flush" id="my-canDo">
-                            <li class="list-group-item">test2</li>
-
                     </div>
-                    </ul>
+                    <div class="col-md-5 ">
+                            <div class="input-group">
+                                    <span class="input-group-addon">Time:</span>
+                                    <input type="text" class="form-control" id="t" placeholder="(Minutes)"  aria-describedby="basic-addon3"></input>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Sets:</span>
+                                    <input type="text" class="form-control" id="s" placeholder="Amount of sets you did"aria-describedby="basic-addon3">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Reps:</span>
+                                    <input type="text" class="form-control" id="r" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Weight:</span>
+                                    <input type="text" class="form-control" id="w"  placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+                                </div>
+                    </div>
                 </div>
-
             </div>
+
         </div>
-        <p id="add1">
-            added to done
-        </p>
-        
-        <p id="last1">
-            last clicked
-        </p>
-        <p id="last2">
-            last clicked2
-        </p>
-    </div>
-    <div id="footer-placeholder"></div>
-    <script>
-        var navProperties = {
-            mainNav: "_nav.html",
-            currentSection: "Exercises"
-        };
-    </script>
-    <div id="scripts-placeholder"></div>
-    <script src="dist/bundle.js">
-    </script>
+        <div id="footer-placeholder"></div>
+        <script>
+            var navProperties = {
+                mainNav: "_nav.html",
+                currentSection: "Exercises"
+            };
+        </script>
+        <div id="scripts-placeholder"></div>
+        <script src="dist/bundle.js">
+        </script>
 </body>
 
 </html>

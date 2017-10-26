@@ -15,11 +15,14 @@
 
     <div class="container">
         <div class="jumbotron">
+            <h1 id="greetings" class="display-3">Hello, world!</h1>
+            <p class="lead">This is where you can manage your workouts.</p>
+            <hr class="my-4">
             <div class="row">
                 <div class="col-md-3">
                     <div class="card">
-                        <div class="card-header">
-                            Routines
+                        <div class="card-header" id="Default Exercises">
+                            Default Exercises
                         </div>
                         <ul class="list-group list-group-flush" id="defaultExercises">
 
@@ -30,30 +33,30 @@
                     <div class="col-md-5">
                         <div class="input-group">
                             <span class="input-group-addon">Time:</span>
-                            <input type="text" class="form-control" id="t" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" id="t" placeholder="(Minutes)"  aria-describedby="basic-addon3"></input>
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon">Sets:</span>
-                            <input type="text" class="form-control" id="s" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" id="s" placeholder="Amount of sets you did"aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon">Reps:</span>
-                            <input type="text" class="form-control" id="r" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" id="r" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon">Weight:</span>
-                            <input type="text" class="form-control" id="w" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" id="w"  placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
                         </div>
                     </div>
                     <div class="col-md-7">
                         <div class="card">
                             <div class="card-body">
                                 <div class="card">
-                                    <div class="card-header">
-                                        My Routines
+                                    <div class="card-header" id="Finished Exercises">
+                                        My finished Exercises
                                     </div>
-                                    <ul class="list-group list-group-flush" id="my-routines">
-                                        <li class="list-group-item" id="default-message">No Routines added yet!</li>
+                                    <ul class="list-group list-group-flush" id="my-Exercises">
+                                        <li class="list-group-item" id="default-message">You haven't completed any exercises.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -61,9 +64,7 @@
                     </div>
                 </div>
             </div>
-            <p id="test">test to see it worked</p>
         </div>
-
     </div>
     <div id="footer-placeholder"></div>
 

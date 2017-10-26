@@ -8,7 +8,7 @@
     "sass": "node-sass jquery-mockup/src --output jquery-mockup/dist --watch",
     "webpack:main": "webpack jquery-mockup/src/main.js jquery-mockup/dist/bundle.js --optimize-minimize",
     "w": "webpack jquery-mockup/src/main.js jquery-mockup/dist/bundle.js --optimize-minimize",
-    "server": "node server/index.js"
+    "s": "node server/index.js"
   },
   "repository": {
     "type": "git",

@@ -17,6 +17,7 @@ export class Exercise {
 }
 
 export class Person {
+  name: string; 
   exerciseList: Exercise[] = [
     { name: "Weight Lifting", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
     { name: "Jogging", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
@@ -24,7 +25,9 @@ export class Person {
     { name: "Cycling", time: "0 minutes", sets: 0, reps: 0, weight: 0 }
   ];
   myExercises: Exercise[] = [];
-
+  drawGreeting() {
+    $("#greetings").html(`<h1 class="display-3">Hello, ${this.name}</li>`);
+  }
   drawExercises() {
     $("#defaultExercises").html(
       this.exerciseList
@@ -36,19 +39,17 @@ export class Person {
   }
 
   drawmyExercises() {
-    $("#my-routines").html(
+    $("#my-Exercises").html(
       this.myExercises
         .map(function(x) {
           return (
-            '<li class="list-group-item">' +
-            x.name +
-            " " +
+            '<li class="list-group-item">' +x.name +", time:" +
             x.time +
-            " " +
+            ", sets:" +
             x.sets +
-            " " +
+            ", reps:" +
             x.reps +
-            " " +
+            ", weight:" +
             x.weight +
             "</li>"
           );
@@ -62,7 +63,9 @@ export class Person {
 
 const person = new Person();
 let empty: boolean = true;
+person.drawGreeting();
 person.drawExercises();
+
 $(".list-group-item").click(function(e) {
   e.preventDefault();
   var t = (<HTMLInputElement>document.getElementById("t")).value;
@@ -74,5 +77,19 @@ $(".list-group-item").click(function(e) {
   person.myExercises.push(newRoutine);
   console.log(JSON.stringify(person.exerciseList));
   person.drawmyExercises();
-  
+});
+
+$(".btn").click(function(e) {
+  e.preventDefault();
+  var t = (<HTMLInputElement>document.getElementById("t")).value;
+  var s = parseFloat((<HTMLInputElement>document.getElementById("s")).value);
+  var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
+  var w = parseFloat((<HTMLInputElement>document.getElementById("w")).value);
+  var workoutName = (<HTMLInputElement>e.target.ownerDocument.getElementById(
+    "name"
+  )).value;
+  var newRoutine = new Exercise(workoutName, t, s, r, w);
+  person.myExercises.push(newRoutine);
+  console.log(JSON.stringify(person.exerciseList));
+  person.drawmyExercises();
 });
