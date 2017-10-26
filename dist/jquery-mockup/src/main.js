@@ -4,5 +4,6 @@ require("bootstrap");
 require("./navigation.ts");
 require("./Exercises.ts");
 require("./Exercises.js");
+require("./fitness.ts");
 require("./main.scss");
 //# sourceMappingURL=main.js.map

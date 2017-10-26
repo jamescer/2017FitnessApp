@@ -29,15 +29,7 @@ export class Tracker {
     $("#routine-List").html(
       this.exerciseList
         .map(function(x) {
-          return (
-            '<li class="list-group-item">' +
-            x.name + " " +
-            x.time + " " +
-            x.sets + " " +
-            x.reps + " " +
-            x.weight +
-            "</li>"
-          );
+          return '<li class="list-group-item">' + x.name + "</li>";
         })
         .join("")
     );
@@ -51,9 +43,12 @@ export class Tracker {
             '<li class="list-group-item">' +
             x.name +
             " " +
-            x.time + " " +
-            x.sets + " " +
-            x.reps + " " +
+            x.time +
+            " " +
+            x.sets +
+            " " +
+            x.reps +
+            " " +
             x.weight +
             "</li>"
           );
@@ -67,21 +62,25 @@ export class Tracker {
 
 const tracker = new Tracker();
 let empty: boolean = true;
-
 tracker.drawExercises();
+$(".list-group-item").click(function(e) {
+  e.preventDefault();
+  var test = $("#time").val;
+  var t = (<HTMLInputElement>document.getElementById("t")).value; 
+  var s = parseFloat((<HTMLInputElement>document.getElementById("s")).value);
+  var r =parseFloat((<HTMLInputElement>document.getElementById("r")).value);
+  var w = parseFloat((<HTMLInputElement>document.getElementById("w")).value);
 
-$(".list-group-item").click(function(e) {
-  e.preventDefault();
-  const workoutName = e.target.textContent;
-  if (empty) {
-    document.getElementById("default-message").remove();
-    empty = false;
-  }
-  const newRoutine = new Exercise(workoutName, "0", 0, 0, 0);
+  // alert("time " + t);
+  // alert("sets " + s);
+  // alert("reps " + r);
+  // alert("weight " + w);
+
+  var workoutName = e.target.textContent;
+  document.getElementById("default-message").innerHTML = "";
+  var newRoutine = new Exercise(workoutName, t, s, r, w);
   tracker.myExercises.push(newRoutine);
-  console.log(tracker.myExercises);
+  console.log(JSON.stringify(tracker.exerciseList));
   tracker.drawmyExercises();
-});
-$(".list-group-item").click(function(e) {
-  e.preventDefault();
+  document.getElementById("w").
 });

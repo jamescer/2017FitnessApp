@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 $primary-background: rgb(96, 206, 160);
 $secondary-background:rgb(167, 236, 206);
+$dark: #042e1d;
 $monospace: "Courier New",
 Courier,
 monospace;
@@ -19,14 +20,12 @@ monospace;
 
 .row {
     .card {
-       
         //color: $primary-background;.list-group, .list-group-flush,
         .list-group-item:focus,
         .list-group-item:hover {
             background-color: $secondary-background;
         }
-    }
-    // .card:hover {
+    } // .card:hover {
     //     background-color: #042e1d;
     // }
 }
@@ -43,6 +42,11 @@ monospace;
         align-items: center;
         color: white;
     }
+}
+
+.input-group-addon {
+    color: white;
+    background: $dark;
 }
 
 header {

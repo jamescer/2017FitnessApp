@@ -25,11 +25,20 @@ var Person = /** @class */ (function () {
     function Person() {
         this.name = "James Cerniglia";
         // done: Exercise[] = [];
+        // canDo: Exercise[] = [];
         this.done = [{ name: "Bicep Curls", reps: 6, sets: 3, weight: 30 }];
         this.canDo = [{ name: "Bent over Row", reps: 6, sets: 3, weight: 30 }];
         this.canDo;
         this.done;
     }
+    Person.prototype.AddToDone = function (a1, a, b, c) {
+        var newE = new Exercise(a1, a, b, c);
+        this.done.push(newE);
+    };
+    Person.prototype.AddToCanDo = function (a1, a, b, c) {
+        var newE = new Exercise(a1, a, b, c);
+        this.canDo.push(newE);
+    };
     Person.prototype.drawDone = function () {
         $("#my-Done").html(this.done
             .map(function (x) {
@@ -37,13 +46,16 @@ var Person = /** @class */ (function () {
         })
             .join(""));
     };
-    Person.prototype.drawCanDo = function () {
-        $("#my-canDo").html(this.canDo
-            .map(function (y) {
-            return "<li class=\"list-group-item\">" + y.name + ": Sets: " + y.sets + ", Reps: " + y.reps + "</li>";
-        })
-            .join(""));
-    };
+    // drawCanDo() {
+    //   $("#my-canDo").html(
+    //     this.canDo
+    //       .map(
+    //         y =>
+    //           `<li class="list-group-item">${y.name}: Sets: ${y.sets}, Reps: ${y.reps}</li>`
+    //       )
+    //       .join("")
+    //   );
+    // }
     Person.prototype.drawGreeting = function () {
         $("#greetings").html("<h1 class=\"display-3\">Hello, " + this.name + "</li>");
     };
@@ -53,23 +65,42 @@ var Person = /** @class */ (function () {
     return Person;
 }());
 exports.Person = Person;
-$("#Adding1").on("click", function (event) {
-    event.preventDefault();
-    $(function () {
-        donecounter++;
-        $("#addedtodone").html(" <p>done: " + donecounter + "</p>");
-    });
-});
-$("#Adding2").on("click", function (event) {
-    event.preventDefault();
-    $(function () {
-        candocounter++;
-        $("#addedtocando").html(" <p>done: " + candocounter + "</p>");
-    });
-});
+// $("#Adding1").on("click", function() {
+//   $(function() {
+//     donecounter++;
+//     $("#add1").html(` <p>done: ${donecounter}</p>`);
+//     $("#last1").html(
+//       me.canDo
+//         .map(
+//           y =>
+//             `<li class="list-group-item">${y.name}: Sets: ${y.sets}, Reps: ${y.reps}, Weight: ${y.weight}</li>`
+//         )
+//         .join("")
+//     );
+//   });
+// });
+// $("#Adding2").on("click", function() {
+//   $(function() {
+//     candocounter++;
+//     $("#add2").html(`<p>cando: ${candocounter}</p>`);
+//   });
+// });
+// $("#Adding2").on("click", function() {
+//   $(function() {
+//     $("#last2").html(
+//       me.canDo
+//         .map(
+//           y =>
+//             `<li class="list-group-item">${y.name}: Sets: ${y.sets}, Reps: ${y.reps}, Weight: ${y.weight}</li>`
+//         )
+//         .join("")
+//     );
+//   });
+// });
+$("#Adding1").on("click", function () { });
 // Controller here
 var me = new Person();
 me.drawDone();
-me.drawCanDo();
+// me.drawCanDo();
 me.drawGreeting();
 //# sourceMappingURL=Exercises.js.map

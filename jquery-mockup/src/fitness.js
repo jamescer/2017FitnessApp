@@ -30,10 +30,14 @@ var Tracker = /** @class */ (function(F) {
         .map(function(x) {
           return (
             '<li class="list-group-item">' +
-            x.name + " " +
-            x.time + " " +
-            x.sets + " " +
-            x.reps + " " +
+            x.name +
+            " " +
+            x.time +
+            " " +
+            x.sets +
+            " " +
+            x.reps +
+            " " +
             x.weight +
             "</li>"
           );
@@ -48,13 +52,18 @@ var Tracker = /** @class */ (function(F) {
   Tracker.prototype.drawmyExercises = function() {
     var index = 0;
     $("#my-routines").html(
-      this.myExercises.map(function(x) {
+      this.myExercises
+        .map(function(x) {
           return (
             '<li class="list-group-item">' +
-            x.name + " " +
-            x.time + " " +
-            x.sets + " " +
-            x.reps + " " +
+            x.name +
+            " " +
+            x.time +
+            " " +
+            x.sets +
+            " " +
+            x.reps +
+            " " +
             x.weight +
             "</li>"
           );
@@ -68,21 +77,24 @@ exports.Tracker = Tracker;
 //Controller
 var tracker = new Tracker();
 tracker.drawExercises();
-$(".list-group-item").click(function(e) {
-  e.preventDefault();
-  
-  //const workoutID = e.target.id;
-  var workoutName = e.target.textContent;
-  document.getElementById("default-message").innerHTML = "";
-  //$("#my-routines").append($("<li class=\"list-group-item\">").text(workoutName));
-  var newRoutine = new Exercise(workoutName, "0", 0, 0, 0);
-  tracker.myExercises.push(newRoutine);
-  console.log(JSON.stringify(tracker.exerciseList));
-  tracker.drawmyExercises();
-});
 
 // $(".list-group-item").click(function(e) {
 //   e.preventDefault();
-//   // tracker.myExercises.pop();
-//   $("#test").html('<p>it worked! by pressing on my exercises</p>');
+//   var t = document.getElementById("time").textContent;
+//   var s = document.getElementById("sets").valueOf;
+//   var r = document.getElementById("reps").valueOf;
+//   var w = document.getElementById("weight").valueOf;
+  
+//   alert("time" + t);
+//   alert("sets" + s);
+//   alert("reps" + r);
+//   alert("weight" + w);
+
+//   var workoutName = e.target.textContent;
+//   document.getElementById("default-message").innerHTML = "";
+//   var newRoutine = new Exercise(workoutName, t, s, r, w);
+//   tracker.myExercises.push(newRoutine);
+//   console.log(JSON.stringify(tracker.exerciseList));
+//   tracker.drawmyExercises();
 // });
+
