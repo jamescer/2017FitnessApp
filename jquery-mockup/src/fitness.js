@@ -8,8 +8,8 @@ var Exercise = /** @class */ (function() {
   return Exercise;
 })();
 exports.Exercise = Exercise;
-var Tracker = /** @class */ (function(F) {
-  function Tracker() {
+var Person = /** @class */ (function(F) {
+  function Person() {
     this.exerciseList = [
       {
         name: "Weight Lifting",
@@ -23,9 +23,9 @@ var Tracker = /** @class */ (function(F) {
       { name: "Cycling", time: "0 minutes", sets: 0, reps: 0, weight: 0 }
     ];
   }
-  Tracker.prototype.drawExercises = function() {
+  Person.prototype.drawExercises = function() {
     var index = 0;
-    $("#routine-List").html(
+    $("#defaultExercises").html(
       this.exerciseList
         .map(function(x) {
           return (
@@ -44,12 +44,12 @@ var Tracker = /** @class */ (function(F) {
         })
         .join("")
     );
-    $("#routine-List button").each(function(index) {
+    $("#defaultExercises button").each(function(index) {
       $(this).attr("id", "id" + index);
       index++;
     });
   };
-  Tracker.prototype.drawmyExercises = function() {
+  Person.prototype.drawmyExercises = function() {
     var index = 0;
     $("#my-routines").html(
       this.myExercises
@@ -71,30 +71,20 @@ var Tracker = /** @class */ (function(F) {
         .join("")
     );
   };
-  return Tracker;
+  return Person;
 })();
-exports.Tracker = Tracker;
+exports.Person = Person;
 //Controller
-var tracker = new Tracker();
-tracker.drawExercises();
+var person = new Person();
+person.drawExercises();
 
 // $(".list-group-item").click(function(e) {
 //   e.preventDefault();
-//   var t = document.getElementById("time").textContent;
-//   var s = document.getElementById("sets").valueOf;
-//   var r = document.getElementById("reps").valueOf;
-//   var w = document.getElementById("weight").valueOf;
-  
-//   alert("time" + t);
-//   alert("sets" + s);
-//   alert("reps" + r);
-//   alert("weight" + w);
-
 //   var workoutName = e.target.textContent;
 //   document.getElementById("default-message").innerHTML = "";
-//   var newRoutine = new Exercise(workoutName, t, s, r, w);
-//   tracker.myExercises.push(newRoutine);
-//   console.log(JSON.stringify(tracker.exerciseList));
-//   tracker.drawmyExercises();
+//   var newRoutine = new Exercise(workoutName, "t", 0, 0,0);
+//   person.myExercises.push(newRoutine);
+//   console.log(JSON.stringify(person.exerciseList));
+//   person.drawmyExercises();
 // });
 

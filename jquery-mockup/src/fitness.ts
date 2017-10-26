@@ -16,7 +16,7 @@ export class Exercise {
   }
 }
 
-export class Tracker {
+export class Person {
   exerciseList: Exercise[] = [
     { name: "Weight Lifting", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
     { name: "Jogging", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
@@ -26,7 +26,7 @@ export class Tracker {
   myExercises: Exercise[] = [];
 
   drawExercises() {
-    $("#routine-List").html(
+    $("#defaultExercises").html(
       this.exerciseList
         .map(function(x) {
           return '<li class="list-group-item">' + x.name + "</li>";
@@ -60,27 +60,19 @@ export class Tracker {
 
 //Controller
 
-const tracker = new Tracker();
+const person = new Person();
 let empty: boolean = true;
-tracker.drawExercises();
+person.drawExercises();
 $(".list-group-item").click(function(e) {
   e.preventDefault();
-  var test = $("#time").val;
-  var t = (<HTMLInputElement>document.getElementById("t")).value; 
+  var t = (<HTMLInputElement>document.getElementById("t")).value;
   var s = parseFloat((<HTMLInputElement>document.getElementById("s")).value);
-  var r =parseFloat((<HTMLInputElement>document.getElementById("r")).value);
+  var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
   var w = parseFloat((<HTMLInputElement>document.getElementById("w")).value);
-
-  // alert("time " + t);
-  // alert("sets " + s);
-  // alert("reps " + r);
-  // alert("weight " + w);
-
   var workoutName = e.target.textContent;
-  document.getElementById("default-message").innerHTML = "";
   var newRoutine = new Exercise(workoutName, t, s, r, w);
-  tracker.myExercises.push(newRoutine);
-  console.log(JSON.stringify(tracker.exerciseList));
-  tracker.drawmyExercises();
-  document.getElementById("w").
+  person.myExercises.push(newRoutine);
+  console.log(JSON.stringify(person.exerciseList));
+  person.drawmyExercises();
+  
 });
