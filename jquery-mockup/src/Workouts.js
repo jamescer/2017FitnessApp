@@ -3,60 +3,55 @@ exports.__esModule = true;
 var $ = require("jquery");
 
 var Person = /** @class */ (function(F) {
-  function Person(n) {
-    this.name = n;
-  }
-
-  Person.prototype.drawGreeting = function() {
-    $("#greetings")
-      .html(`<h1 class="display-3">Hello, ${this.name}</li>`)
-      .join("");
-  };
-  Person.prototype.drawExercises = function() {
-    var index = 0;
-    $("#defaultExercises").html(
-      this.exerciseList
-        .map(function(x) {
-          return '<li class="list-group-item"  href="">' + x.name + "</li>";
-        })
-        .join("")
-    );
-    $("#defaultExercises button").each(function(index) {
-      $(this).attr("id", "id" + index);
-      index++;
-    });
-  };
-  Person.prototype.drawmyExercises = function() {
-    var index = 0;
-    $("#my-Exercises").html(
-      this.myExercises
-        .map(function(x) {
-          return (
-            '<li class="list-group-item">' +
-            x.name +
-            ", time: " +
-            x.time +
-            ", sets: " +
-            x.sets +
-            ", reps: " +
-            x.reps +
-            ", weight: " +
-            x.weight +
-            "</li>"
-          );
-        })
-        .join("")
-    );
-    $("#my-Exercises button").each(function(index) {
-      $(this).attr("id", "id" + index);
-      index++;
-    });
-  };
+  function Person() {}
   return Person;
 })();
 exports.Person = Person;
 
 //Controller
-var person = new Person("James Cerniglia");
+var person = new Person();
 person.drawExercises();
 person.drawGreeting();
+
+function maxBench() {
+  var x = document.createElement("OUTPUT");
+  var r = parseFloat(document.getElementById("r0").value);
+  var w = parseFloat(document.getElementById("w0").value);
+  if (isNaN(r)) {
+    r = 0;
+  }
+  if (isNaN(w)) {
+    w = 0;
+  }
+  var ONEREPMAX = w * (1 + r / 30);
+  console.log(ONEREPMAX);
+  document.getElementById("MaxBench").appendChild(ONEREPMAX);
+}
+function maxDeadlift() {
+  var x = document.createElement("OUTPUT");
+  var r = parseFloat(document.getElementById("r1").value);
+  var w = parseFloat(document.getElementById("w1").value);
+  if (isNaN(r)) {
+    r = 0;
+  }
+  if (isNaN(w)) {
+    w = 0;
+  }
+  var ONEREPMAX = w * (1 + r / 30);
+  console.log(ONEREPMAX);
+  document.getElementById("MaxDeadlift").appendChild(ONEREPMAX);
+}
+function maxSquat() {
+  var x = document.createElement("OUTPUT");
+  var r = parseFloat(document.getElementById("r2").value);
+  var w = parseFloat(document.getElementById("w2").value);
+  if (isNaN(r)) {
+    r = 0;
+  }
+  if (isNaN(w)) {
+    w = 0;
+  }
+  var ONEREPMAX = w * (1 + r / 30);
+  console.log(ONEREPMAX);
+  document.getElementById("MaxSquat").appendChild(ONEREPMAX);
+}

@@ -17,6 +17,9 @@ export class Exercise {
 }
 
 export class Person {
+  constructor(n: string) {
+    this.name = n;
+  }
   name: string;
   exerciseList: Exercise[] = [
     { name: "Bench Press", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
@@ -72,7 +75,7 @@ export class Person {
 
 //Controller
 
-const person = new Person();
+const person = new Person("James Cerniglia");
 let empty: boolean = true;
 person.drawGreeting();
 person.drawExercises();
@@ -102,8 +105,7 @@ $(".list-group-item").click(function(e) {
   person.drawmyExercises();
 });
 
-$(".btn btn-primary").click(function(e) {
-  e.preventDefault();
+function AddToDone(){
   var t = (<HTMLInputElement>document.getElementById("t")).value;
   var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
   var s = parseFloat((<HTMLInputElement>document.getElementById("s")).value);
@@ -125,17 +127,18 @@ $(".btn btn-primary").click(function(e) {
   person.myExercises.push(newRoutine);
   console.log(JSON.stringify(person.exerciseList));
   person.drawmyExercises();
-});
-$("#maxbench").click(function(e) {
-  e.preventDefault();
-  var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
-  var w = parseFloat((<HTMLInputElement>document.getElementById("w")).value);
-  if (isNaN(r)) {
-    r = 0;
-  }
-  if (isNaN(w)) {
-    w = 0;
-  }
-  var one= w * (1 + r / 30);
-  document.getElementById("maxoutput").textContent.concat(one.toString());
-});
+}
+
+// $("#maxBench").click(function(e) {
+//   e.preventDefault();
+//   var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
+//   var w = parseFloat((<HTMLInputElement>document.getElementById("w")).value);
+//   if (isNaN(r)) {
+//     r = 0;
+//   }
+//   if (isNaN(w)) {
+//     w = 0;
+//   }
+//   var one = w * (1 + r / 30);
+//   document.getElementById("maxoutput").textContent.concat(one.toString());
+// });
