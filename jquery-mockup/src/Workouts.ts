@@ -102,7 +102,7 @@ $(".list-group-item").click(function(e) {
   person.drawmyExercises();
 });
 
-$(".btn .btn-primary").click(function(e) {
+$(".btn btn-primary").click(function(e) {
   e.preventDefault();
   var t = (<HTMLInputElement>document.getElementById("t")).value;
   var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
@@ -125,4 +125,17 @@ $(".btn .btn-primary").click(function(e) {
   person.myExercises.push(newRoutine);
   console.log(JSON.stringify(person.exerciseList));
   person.drawmyExercises();
+});
+$("#maxbench").click(function(e) {
+  e.preventDefault();
+  var r = parseFloat((<HTMLInputElement>document.getElementById("r")).value);
+  var w = parseFloat((<HTMLInputElement>document.getElementById("w")).value);
+  if (isNaN(r)) {
+    r = 0;
+  }
+  if (isNaN(w)) {
+    w = 0;
+  }
+  var one= w * (1 + r / 30);
+  document.getElementById("maxoutput").textContent.concat(one.toString());
 });

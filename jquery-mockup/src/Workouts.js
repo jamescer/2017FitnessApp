@@ -3,7 +3,9 @@ exports.__esModule = true;
 var $ = require("jquery");
 
 var Person = /** @class */ (function(F) {
-  function Person() {}
+  function Person(n) {
+    this.name = n;
+  }
 
   Person.prototype.drawGreeting = function() {
     $("#greetings")
@@ -55,7 +57,6 @@ var Person = /** @class */ (function(F) {
 exports.Person = Person;
 
 //Controller
-var person = new Person();
+var person = new Person("James Cerniglia");
 person.drawExercises();
 person.drawGreeting();
-

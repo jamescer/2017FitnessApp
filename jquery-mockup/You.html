@@ -21,52 +21,42 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h1 id="greetings" class="display-3">Hello, world!</h1>
+            <h1 id="greetings" class="display-3">Hello,!</h1>
             <p class="lead">This is where you can manage your information.</p>
             <hr class="my-4">
-            <div class="card" style="width: 20rem;">
-                <div class="card-body">
-                    <h4 class="card-title" id="name">Calculate your max bench!</h4>
-                </div>
-                <div class="card-body text-center">
-                    <div class="input-group">
-                        <span class="input-group-addon">Reps:</span>
-                        <input type="text" class="form-control" id="r" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-addon">Weight:</span>
-                        <input type="text" class="form-control" id="w" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="maxy">Max:</span>
-                        <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
+            <div class="card-deck">
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <h4 class="card-title" id="name">Calculate your max bench!</h4>
                     </div>
                     <div class="card-body text-center">
-                        <a onclick="maxBench()" id="maxbench" class="btn btn-primary">Calculate!</a>
+                        <div class="input-group">
+                            <span class="input-group-addon">Reps:</span>
+                            <input type="text" class="form-control" id="r" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">Weight:</span>
+                            <input type="text" class="form-control" id="w" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="maxy">Max:</span>
+                            <output id="maxoutput"></output>
+                            <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
+                        </div>
+                        <div class="card-body text-center">
+                            <a onclick="maxBench()" id="maxbench" class="btn btn-primary">Calculate!</a>
+                        </div>
                     </div>
-                </div>
 
+                </div>
+               
+                </div>
             </div>
         </div>
     </div>
 
     <div id="footer-placeholder"></div>
-    <script>
-        function maxBench() {
-            var x = document.createElement("OUTPUT");
-            var r = parseFloat(document.getElementById("r").value);
-            var w = parseFloat(document.getElementById("w").value);
-            if (isNaN(r)) {
-                r = 0;
-            }
-            if (isNaN(w)) {
-                w = 0;
-            }
-            var ONEREPMAX = w * (1 + r / 30);
-            console.log(ONEREPMAX);
-            document.getElementById("maxy").appendChild(ONEREPMAX);
-        }
-    </script>
+
 
     <script>
         var navProperties = {
