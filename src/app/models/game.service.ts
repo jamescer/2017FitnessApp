@@ -16,7 +16,7 @@ export class GameService {
         this.apiRoot = `//${window.location.hostname}:8081` 
         window.fbAsyncInit = function() {
             FB.init({
-              appId      : '296050416766',
+              appId      : '246977922503152',
               cookie     : true,
               xfbml      : true,
               version    : 'v2.11'
