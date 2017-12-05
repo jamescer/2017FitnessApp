@@ -1,0 +1,82 @@
+<div class="container">
+
+  <div class="jumbotron">
+    <h1 id="greetings" class="display-3">Hello,!</h1>
+    <p class="lead">This is where you can manage your information.</p>
+    <hr class="my-4">
+    <div class="card-deck">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title" id="name">Calculate your max Bench Press!</h4>
+        </div>
+        <div class="card-body text-center">
+          <div class="input-group">
+            <span class="input-group-addon">Reps:</span>
+            <input type="text" class="form-control" id="r0" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">Weight:</span>
+            <input type="text" class="form-control" id="w0" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="MaxBench">Max:</span>
+            <output id="maxoutput"></output>
+            <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
+          </div>
+          <div class="card-body text-center">
+            <a onclick="maxBench()" class="btn btn-primary">Calculate!</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title" id="name">Calculate your max Squat!</h4>
+        </div>
+        <div class="card-body text-center">
+          <div class="input-group">
+            <span class="input-group-addon">Reps:</span>
+            <input type="text" class="form-control" id="r2" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">Weight:</span>
+            <input type="text" class="form-control" id="w2" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="MaxSquat">Max:</span>
+            <output id="maxoutput"></output>
+            <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
+          </div>
+          <div class="card-body text-center">
+            <a onclick="maxSquat()" class="btn btn-primary">Calculate!</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title" id="name">Calculate your max Deadlift!</h4>
+        </div>
+        <div class="card-body text-center">
+          <div class="input-group">
+            <span class="input-group-addon">Reps:</span>
+            <input type="text" class="form-control" id="r1" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">Weight:</span>
+            <input type="text" class="form-control" id="w1" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon" id="MaxDeadlift">Max:</span>
+            <output id="maxoutput"></output>
+            <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
+          </div>
+          <div class="card-body text-center">
+            <a onclick="maxDeadlift()" class="btn btn-primary">Calculate!</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

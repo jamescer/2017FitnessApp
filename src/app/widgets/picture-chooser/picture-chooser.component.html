@@ -1,0 +1,11 @@
+<div class="card" *ngIf="images" >
+    <div class="card-header">
+        {{title}}
+    </div>
+    <div class="card-body">
+        <a href="#" *ngFor="let x of images; index as i" (click)="select($event, x)">
+            <img [src]="x.src" class="img-thumbnail rounded" />
+        </a>
+    </div>
+
+</div>

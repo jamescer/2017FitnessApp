@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail3" placeholder="Name" [(ngModel)]="name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password" [(ngModel)]="password">
+                    </div>
+                </div>
+                <a class="btn btn-primary"  (click)="login()">Log in</a>
+                <a class="btn btn-primary"  (click)="loginFB()">Log in with Facebook</a>
+            </div>
+    </div>
+</div>
