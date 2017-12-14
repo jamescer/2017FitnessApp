@@ -6,10 +6,11 @@ export class Person {
     this.id = ID;
     this.picture = pic;
   }
-  maxBench:number;
-  maxSquat:number;
-  maxDeadlift:number;
-
+  maxBench: number;
+  maxSquat: number;
+  maxDeadlift: number;
+  quotes: Quote[] = [];
+  score: number;
   id: string;
   picture: string;
   name: string;
@@ -63,4 +64,28 @@ export class Person {
   //         })
   //         .join("")
   //     );
+}
+export class Quote {
+  text: string;
+  chosen: boolean = false;
+  player: string;
+}
+
+export class Image {
+  id: string;
+  src: string;
+  link: string;
+}
+export class Player {
+  id: string;
+  name: string = "Moshe Plotkin";
+  quotes: Quote[] = [];
+  score: number = 0;
+}
+
+export class Room {
+  players: Player[] = [new Player(), new Player()];
+  dealer: number;
+  picture: string;
+  quotes: Quote[] = [];
 }

@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HeadComponent } from './head/head.component';
 import { NavComponent } from './nav/nav.component';
 import { IndexComponent } from './index/index.component';
-import { GameService } from './models/game.service';
 import { LoginrComponent } from './loginr/loginr.component';
 // import { PictureChooserComponent } from './widgets/picture-chooser/picture-chooser.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,7 +26,6 @@ import { Person } from './models/Person';
     IndexComponent,
     LoginrComponent,
     // PictureChooserComponent,
-  
     FooterComponent,
     YouComponent,
     WorkoutsComponent,
@@ -49,7 +47,7 @@ import { Person } from './models/Person';
         { path: "", pathMatch: "full", redirectTo: "/home" }
     ])
   ],
-  providers: [ GameService ],
+  providers: [ LoginrComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

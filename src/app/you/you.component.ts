@@ -2,10 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { Http } from "@angular/http";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
-import { GameService } from "../models/game.service";
 import { Router } from "@angular/router";
 import { Person } from "../models/Person";
-import { ME } from "../models/game.service";
+import { ME } from "../loginr/loginr.component";
 import { Exercise } from "../models/Exercise";
 
 declare const FB: any;
@@ -16,11 +15,7 @@ declare const FB: any;
 })
 export class YouComponent implements OnInit {
   me = ME;
-  constructor(
-    private http: Http,
-    public game: GameService,
-    private router: Router
-  ) {}
+  constructor(private http: Http, private router: Router) {}
 
   ngOnInit() {
     if (this.me.name === null) {

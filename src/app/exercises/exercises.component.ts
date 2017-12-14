@@ -1,11 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { Http } from "@angular/http";
-import { GameService } from "../models/game.service";
 import { Router } from "@angular/router";
 import { Person } from "../models/Person";
 import { Exercise } from "../models/Exercise";
 
-import { ME } from "../models/game.service";
+import { ME } from "../loginr/loginr.component";
 @Component({
   selector: "app-exercises",
   templateUrl: "./exercises.component.html",
@@ -13,7 +12,7 @@ import { ME } from "../models/game.service";
 })
 export class ExercisesComponent implements OnInit {me = ME;
   
-  constructor(private game: GameService, private router: Router) {}
+  constructor( private router: Router) {}
 
   ngOnInit() {}
   AddToDone(exerciseName: string, reps: number, weight: number) {
