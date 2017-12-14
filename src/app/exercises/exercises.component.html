@@ -6,43 +6,43 @@
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="assets/img/Deadlift.gif" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title" id="name">Deadlifts</h4>
+          <h4 class="card-title">Deadlifts</h4>
           <p class="card-text text-center">Squats are a great glute exercise.</p>
         </div>
         <div class="card-body text-center">
-          <a onclick="AddToDone()" id="Adding1" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone('DeadLifts', 0, 0)" id="Adding1" class="btn btn-primary">Add to Done</a>
         </div>
 
       </div>
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="assets/img/Squat.gif" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title" id="name">Squats</h4>
+          <h4 class="card-title">Squats</h4>
           <p class="card-text text-center">Squats are a great glute exercise.</p>
         </div>
         <div class="card-body text-center">
-          <a onclick="AddToDone()" id="Adding2" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone('Squats', 0, 0)" id="Adding2" class="btn btn-primary">Add to Done</a>
         </div>
 
       </div>
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="assets/img/BentOverRow.jpg" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title" id="name">Bent Over Rows</h4>
+          <h4 class="card-title">Bent Over Rows</h4>
           <p class="card-text text-center">Bent Over Rows are a great back exercise.</p>
         </div>
         <div class="card-body text-center">
-          <a onclick="AddToDone()" id="Adding3" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone('Bent Over Rows', 0, 0)" id="Adding3" class="btn btn-primary">Add to Done</a>
         </div>
       </div>
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="assets/img/BicepCurl.jpg" alt="Card image cap">
         <div class="card-body">
-          <h4 class="card-title" id="name">Bicep Curls</h4>
+          <h4 class="card-title">Bicep Curls</h4>
           <p class="card-text text-center">Bicep curls really tear your bicep muscles.</p>
         </div>
         <div class="card-body text-center">
-          <a onclick="AddToDone()" id="Adding4" class="btn btn-primary">Add to Done</a>
+          <a (click)="AddToDone('Bicep Curls', 0, 0)" id="Adding4" class="btn btn-primary">Add to Done</a>
         </div>
 
       </div>
@@ -55,7 +55,9 @@
             My finished Exercises
           </div>
           <ul class="list-group list-group-flush " id="my-Exercises">
-            <li class="list-group-item" id="default-message">You haven't completed any exercises.</li>
+            <li *ngFor="let x of me.myExercises; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
+              <span title="Click to remove">{{x.name}}</span>
+            </li>
           </ul>
         </div>
       </div>

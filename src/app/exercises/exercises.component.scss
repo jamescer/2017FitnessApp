@@ -1,0 +1,18 @@
+li:hover {
+    cursor: pointer;
+}
+
+li:focus{
+    animation-duration: 5s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+       
+    }
+    to {
+        margin-left: 100%;
+        width: 100%;
+    }
+}

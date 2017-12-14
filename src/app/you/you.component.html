@@ -1,8 +1,12 @@
 <div class="container">
 
   <div class="jumbotron">
-    <h1 id="greetings" class="display-3">Hello,!</h1>
+    <h1 id="greetings" class="display-3">Hello {{me.name}}!
+      <img [src]="me.picture" style="width: 56px;" class="rounded" />
+    </h1>
+
     <p class="lead">This is where you can manage your information.</p>
+
     <hr class="my-4">
     <div class="card-deck">
       <div class="card" style="width: 20rem;">
@@ -12,19 +16,19 @@
         <div class="card-body text-center">
           <div class="input-group">
             <span class="input-group-addon">Reps:</span>
-            <input type="text" class="form-control" id="r0" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+            <input type="text" class="form-control" [(ngModel)]="benchReps" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
           </div>
           <div class="input-group">
             <span class="input-group-addon">Weight:</span>
-            <input type="text" class="form-control" id="w0" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+            <input type="text" class="form-control" [(ngModel)]="benchWeight" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
           </div>
           <div class="input-group">
             <span class="input-group-addon" id="MaxBench">Max:</span>
-            <output id="maxoutput"></output>
-            <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
+            <output id="maxoutput" placeholder="0">{{benchWeight * (1 + benchReps / 30)}}</output>
+            <!-- <input type="text" class="form-control" placeholder="{{benchWeight * (1 + benchReps / 30)}}" aria-describedby="basic-addon3"> -->
           </div>
           <div class="card-body text-center">
-            <a onclick="maxBench()" class="btn btn-primary">Calculate!</a>
+            <a (click)="maxBench(benchWeight * (1 + benchReps / 30))" class="btn btn-primary">Save</a>
           </div>
         </div>
 
@@ -36,19 +40,20 @@
         <div class="card-body text-center">
           <div class="input-group">
             <span class="input-group-addon">Reps:</span>
-            <input type="text" class="form-control" id="r2" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+            <input type="text" class="form-control" [(ngModel)]="squatReps" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
           </div>
           <div class="input-group">
             <span class="input-group-addon">Weight:</span>
-            <input type="text" class="form-control" id="w2" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+            <input type="text" class="form-control" [(ngModel)]="squatWeight" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
           </div>
           <div class="input-group">
             <span class="input-group-addon" id="MaxSquat">Max:</span>
-            <output id="maxoutput"></output>
+            <output id="maxoutput" placeholder="0">{{squatWeight * (1 + squatReps / 30)}}</output>
+
             <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
           </div>
           <div class="card-body text-center">
-            <a onclick="maxSquat()" class="btn btn-primary">Calculate!</a>
+            <a (click)="maxSquat(squatWeight * (1 + squatReps / 30))" class="btn btn-primary">Save</a>
           </div>
         </div>
 
@@ -60,19 +65,19 @@
         <div class="card-body text-center">
           <div class="input-group">
             <span class="input-group-addon">Reps:</span>
-            <input type="text" class="form-control" id="r1" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
+            <input type="text" class="form-control" [(ngModel)]="DLReps" placeholder="Amount of reps you did" aria-describedby="basic-addon3">
           </div>
           <div class="input-group">
             <span class="input-group-addon">Weight:</span>
-            <input type="text" class="form-control" id="w1" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
+            <input type="text" class="form-control" [(ngModel)]="DLWeight" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3">
           </div>
           <div class="input-group">
             <span class="input-group-addon" id="MaxDeadlift">Max:</span>
-            <output id="maxoutput"></output>
+            <output id="maxDL" placeholder="0">{{DLWeight * (1 + DLReps / 30)}}</output>
             <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
           </div>
           <div class="card-body text-center">
-            <a onclick="maxDeadlift()" class="btn btn-primary">Calculate!</a>
+            <a (click)="maxDeadlift(DLWeight * (1 + DLReps / 30))" class="btn btn-primary">Save</a>
           </div>
         </div>
 
