@@ -17,7 +17,7 @@ import { WidgetsComponent } from "./widgets/widgets.component";
 import { SharingComponent } from "./sharing/sharing.component";
 import { Person } from "./models/Person";
 import { SharingService } from "./models/sharing.service";
-// import { ModelsComponent } from './models/models.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { SharingService } from "./models/sharing.service";
   imports: [
     BrowserModule,
     HttpModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule.forRoot([
       { path: "home", component: IndexComponent },

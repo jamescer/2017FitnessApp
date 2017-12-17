@@ -1,7 +1,7 @@
 {
-  "name": "2017fallwebprogramming",
+  "name": "2017fitnessapp",
   "version": "1.0.0",
-  "description": "what do you meme",
+  "description": "Fitness App to share exercises with others!",
   "main": "index.js",
   "scripts": {
     "sass": "node-sass jquery-mockup/src --output jquery-mockup/dist --watch",
@@ -20,7 +20,7 @@
     "url": "git+https://github.com/cerniglj1/2017FitnessApp.git"
   },
   "dependencies": {
-    "@angular/animations": "^5.0.0",
+    "@angular/animations": "^5.1.1",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/core": "^5.0.0",
@@ -36,7 +36,6 @@
     "jquery": "^3.2.1",
     "popper.js": "^1.12.5",
     "rxjs": "^5.5.2",
-    "util-is": "^0.1.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

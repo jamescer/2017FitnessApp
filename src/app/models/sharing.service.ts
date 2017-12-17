@@ -13,3 +13,4 @@ export class SharingService {
 
   updateList() {}
 }
+export var sharedUsers: Person[];

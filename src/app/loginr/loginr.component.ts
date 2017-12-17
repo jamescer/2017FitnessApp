@@ -6,13 +6,16 @@ import { HttpModule } from "@angular/http";
 import { Http } from "@angular/http";
 import { Person } from "../models/Person";
 
+
 declare var window: any;
 declare var FB: any;
 export var personArray: Person[] = [];
 @Component({
   selector: "app-loginr",
   templateUrl: "./loginr.component.html",
-  styleUrls: ["./loginr.component.scss"]
+  styleUrls: ["./loginr.component.scss"],
+  
+  
 })
 export class LoginrComponent implements OnInit {
   name: string;

@@ -2,6 +2,8 @@
   <div id="grad" class="jumbotron">
     <h1 class="display-3">Exercises</h1>
     <hr class="my-4">
+  </div>
+  <div class="jumbotron">
     <div class="card-deck">
       <div class="card" style="width: 20rem;">
         <img class="card-img-top" src="assets/img/Deadlift.gif" alt="Card image cap">
@@ -48,11 +50,11 @@
       </div>
     </div>
     <h1 class="display-3"></h1>
-    <div class="row" id="workouts">
+    <div class="row" [@my-Exercises]="this.ME.myExercises.length">
       <div class="col-md-5 ">
         <div class="card text-center">
           <div class="card-header">
-            My finished Exercises
+            My finished Exercisess
           </div>
           <ul class="list-group list-group-flush ">
             <li *ngFor="let x of this.ME.myExercises; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
