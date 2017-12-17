@@ -19,9 +19,7 @@ export class LoginrComponent implements OnInit {
   password: string;
   me = ME;
   apiRoot: string;
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   constructor(private http: Http, private router: Router) {
     this.apiRoot = `//${window.location.hostname}:8081`; //8081
@@ -73,24 +71,7 @@ export class LoginrComponent implements OnInit {
 
   login(name: string, password: string, fbid?: string, picture?: string) {
     ME = new Person(name, fbid, picture);
-    this.http
-      .post(this.apiRoot + "/sharing/personArray", {
-        name,
-        password,
-        fbid,
-        picture
-      })
-      .subscribe(
-        data => {
-          this.me = data.json();
-          this.http.get(this.apiRoot + "/sharing/personArray")
-          this.router.navigate(["/sharing"]);
-        },
-        err => {
-          console.log(err);
-        },
-        () => {}
-      );
+    this.router.navigate(["/you"]);
   }
 }
 export var ME: Person;

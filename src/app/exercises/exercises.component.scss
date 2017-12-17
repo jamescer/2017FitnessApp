@@ -1,16 +1,24 @@
+$primary-background: rgb(96, 206, 160);
+$primary-backgroundD: #2c8f62;
+$secondary-background:rgb(167, 236, 206);
+
+
+
 li:hover {
     cursor: pointer;
 }
 
-li:focus{
+#grad {
+    background: linear-gradient(to bottom right, $primary-backgroundD, $secondary-background);
+}
+
+li:focus {
     animation-duration: 5s;
     animation-name: slidein;
 }
 
 @keyframes slidein {
-    from {
-       
-    }
+    from {}
     to {
         margin-left: 100%;
         width: 100%;

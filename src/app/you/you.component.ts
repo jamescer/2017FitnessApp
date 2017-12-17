@@ -6,7 +6,6 @@ import { Router } from "@angular/router";
 import { Person } from "../models/Person";
 import { ME } from "../loginr/loginr.component";
 import { Exercise } from "../models/Exercise";
-
 declare const FB: any;
 @Component({
   selector: "app-you",
@@ -14,11 +13,11 @@ declare const FB: any;
   styleUrls: ["./you.component.scss"]
 })
 export class YouComponent implements OnInit {
-  me = ME;
+  ME = ME;
   constructor(private http: Http, private router: Router) {}
 
   ngOnInit() {
-    if (this.me.name === null) {
+    if (ME == null) {
       this.router.navigate(["/login"]);
     }
   }
@@ -26,12 +25,15 @@ export class YouComponent implements OnInit {
   update() {}
 
   maxBench(a: number) {
-    this.me.maxBench = a;
+    ME.maxBench = a;
   }
   maxSquat(a: number) {
-    this.me.maxSquat = a;
+    ME.maxSquat = a;
   }
   maxDeadlift(a: number) {
-    this.me.maxDeadlift = a;
+    ME.maxDeadlift = a;
+  }
+  logout() {
+    this.router.navigate(["/login"]);
   }
 }

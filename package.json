@@ -20,11 +20,6 @@
     "url": "git+https://github.com/cerniglj1/2017FitnessApp.git"
   },
   "dependencies": {
-    "express": "^4.15.4",
-    "body-parser": "^1.18.2",
-    "jquery": "^3.2.1",
-    "bootstrap-4": "^4.0.0",
-    "popper.js": "^1.12.5",
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
@@ -34,8 +29,14 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "body-parser": "^1.18.2",
+    "bootstrap-4": "^4.0.0",
     "core-js": "^2.4.1",
+    "express": "^4.15.4",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.5",
     "rxjs": "^5.5.2",
+    "util-is": "^0.1.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

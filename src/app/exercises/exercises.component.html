@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="jumbotron">
+  <div id="grad" class="jumbotron">
     <h1 class="display-3">Exercises</h1>
     <hr class="my-4">
     <div class="card-deck">
@@ -51,11 +51,11 @@
     <div class="row" id="workouts">
       <div class="col-md-5 ">
         <div class="card text-center">
-          <div class="card-header" id="Finished Exercises">
+          <div class="card-header">
             My finished Exercises
           </div>
-          <ul class="list-group list-group-flush " id="my-Exercises">
-            <li *ngFor="let x of me.myExercises; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
+          <ul class="list-group list-group-flush ">
+            <li *ngFor="let x of this.ME.myExercises; index as i" class="list-group-item" (click)="removeFromMyExercises(x)">
               <span title="Click to remove">{{x.name}}</span>
             </li>
           </ul>

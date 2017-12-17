@@ -1,21 +1,31 @@
 <div class="container">
   <div class="jumbotron">
-    <div class="row">
-      <div class="col-md-12">
+
+    <div class="col-md-12">
+      <div class="row">
         <div class="card text-center">
           <div class="card-header">
             people signed in
           </div>
           <ul class="list-group list-group-flush ">
-            <li *ngFor="let x of this.PA; index as i" class="list-group-item">
+            <li *ngFor="let x of this.room.sharedUsers; index as i" class="list-group-item" (click)="viewExercises(x)">
               {{x.name}}
             </li>
           </ul>
         </div>
         <div class="card-body text-center">
           <a (click)="shareYou()" class="btn btn-primary">Share your Profile!
-            
+
           </a>
+        </div><div class="card text-center">
+          <div class="card-header">
+           their exercises
+          </div>
+          <ul class="list-group list-group-flush ">
+            <li *ngFor="let x of this.otherExe; index as i" class="list-group-item">
+              {{x.name}}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
