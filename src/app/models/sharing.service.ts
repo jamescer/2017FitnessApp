@@ -10,9 +10,10 @@ declare var FB: any;
 export class SharingService {
   apiRoot: string;
   me: Person;
+
   constructor(private http: Http, private router: Router) {
-    this.apiRoot = `//${window.location.hostname}:8081`; //8081
-    window.fbAsyncInit = function () {
+    this.apiRoot =`//${window.location.hostname}:8081`
+    window.fbAsyncInit = function() {
       FB.init({
         appId: "246977922503152",
         cookie: true,
@@ -22,7 +23,7 @@ export class SharingService {
       FB.AppEvents.logPageView();
     };
 
-    (function (d, s, id) {
+    (function(d, s, id) {
       var js,
         fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
@@ -59,10 +60,16 @@ export class SharingService {
 
   login(name: string, password: string, fbid?: string, picture?: string) {
     ME = new Person(name, fbid, picture);
-    this.me = ME;
-    sharedUsers.push(ME);
-    this.http.post(this.apiRoot + "/share/sharedUsers", ME);
+    this.http.post(this.apiRoot + "/share/room/sharedUsers", ME).subscribe(
+      data => {
+        this.me = data.json();
+        console.log(data);
+      },
+      err => {
+        console.log(err);
+      },
+      () => {}
+    );
   }
 }
 export var ME: Person;
-export var sharedUsers: Person[] = [];
