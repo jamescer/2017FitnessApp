@@ -5,10 +5,10 @@
       <div class="row">
         <div class="card text-center">
           <div class="card-header">
-            Shared Users
+            Shared Users ({{ this.room.players.length}})
           </div>
           <ul class="list-group list-group-flush ">
-            <li *ngFor="let x of this.room.sharedUsers; index as i" class="list-group-item" (click)="viewExercises(x)">
+            <li *ngFor="let x of this.room.players; index as i" class="list-group-item" (click)="viewExercises(x)">
               <img [src]="x.picture" style="width: 32px;" class="rounded" /> {{x.name}}
             </li>
           </ul>

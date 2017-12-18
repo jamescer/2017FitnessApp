@@ -12,7 +12,8 @@ export class SharingService {
   me: Person;
 
   constructor(private http: Http, private router: Router) {
-    this.apiRoot =`//${window.location.hostname}:8081`
+    this.apiRoot = `//${window.location.hostname}:8081`;
+    //this.apiRoot = `localhost:4200`;
     window.fbAsyncInit = function() {
       FB.init({
         appId: "246977922503152",
@@ -60,16 +61,21 @@ export class SharingService {
 
   login(name: string, password: string, fbid?: string, picture?: string) {
     ME = new Person(name, fbid, picture);
-    this.http.post(this.apiRoot + "/share/room/sharedUsers", ME).subscribe(
-      data => {
-        this.me = data.json();
-        console.log(data);
-      },
-      err => {
-        console.log(err);
-      },
-      () => {}
-    );
+    this.me = ME;
+    this.http
+      .post(this.apiRoot + "/players", {
+        ME
+      })
+      .subscribe(
+        data => {
+          this.me = data.json();
+          console.log(data);
+        },
+        err => {
+          console.log(err);
+        },
+        () => {}
+      );
   }
 }
 export var ME: Person;

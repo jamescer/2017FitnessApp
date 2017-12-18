@@ -28,42 +28,6 @@ export class Person {
     }
   ];
   myExercises: Exercise[] = [];
-
-  //   drawGreeting() {
-  //     $("#greetings").html(`<h1 class="display-3">Hello, ${this.name}</li>`);
-  //   }
-  //   drawExercises() {
-  //     $("#defaultExercises").html(
-  //       this.exerciseList
-  //         .map(function(x) {
-  //           return '<li class="list-group-item">' + x.name + "</li>";
-  //         })
-  //         .join("")
-  //     );
-  //   }
-
-  //   drawmyExercises() {
-  //     $("#my-Exercises").html(
-  //       this.myExercises
-  //         .map(function(x) {
-  //           return (
-  //             '<li class="list-group-item">' +
-  //             x.name +
-  //             ", time: " +
-  //             x.time +
-  //             ", sets: " +
-  //             x.sets +
-  //             ", reps: " +
-  //             x.reps +
-  //             ", weight: " +
-  //             x.weight +
-  //             "</li>"
-  //           );
-  //         })
-  //         .join("")
-  //     );
-
-
 }
 
 export class Image {
@@ -73,7 +37,5 @@ export class Image {
 }
 
 export class Room {
-  sharedUsers: Person[] = [];
-  dealer: number;
-  picture: string;
+  players: Person[] = [];
 }

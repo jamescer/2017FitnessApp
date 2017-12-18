@@ -34,6 +34,7 @@ export class YouComponent implements OnInit {
     ME.maxDeadlift = a;
   }
   logout() {
+    
     this.router.navigate(["/login"]);
   }
 }
