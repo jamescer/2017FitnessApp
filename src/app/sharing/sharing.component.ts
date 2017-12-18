@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Http } from "@angular/http";
 import { Router } from "@angular/router";
-import { ME } from "../loginr/loginr.component";
-import { Person, Room } from "../models/Person";
+import { Person } from "../models/Person";
 import { Exercise } from "../models/Exercise";
-import { SharingService } from "../models/sharing.service";
+import { SharingService, ME, sharedUsers } from "../models/sharing.service";
 
 @Component({
   selector: "app-sharing",
@@ -12,37 +11,53 @@ import { SharingService } from "../models/sharing.service";
   styleUrls: ["./sharing.component.scss"]
 })
 export class SharingComponent implements OnInit {
-  room = new Room();
+  other = new Person("Blank", "", "");
   otherExe: Exercise[];
-
+  apiRoot: String;
+  ME: Person;
+  users: Person[]
   constructor(
     private http: Http,
-    public game: SharingService,
+    public share: SharingService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
-    if (ME == null) {
+    this.ME = ME;
+    if (this.ME == null) {
       this.router.navigate(["/login"]);
-    }
-    // setInterval(() => this.update(), 1000);
+    } this.users = sharedUsers;
+    //setInterval(() => this.update(), 1000);
   }
   update() {
-    // this.http.get(this.game.apiRoot + "/sharing/room").subscribe(data => {
-    //   this.room = data.json();
-    // });
+    this.http.get(this.share.apiRoot + "/share/").subscribe(data => {
+      this.share = data.json();
+      console.log(data);
+    });
+  }
+  getList() {
+
+  }
+  shareYou() {
+    if (sharedUsers.includes(this.ME)) {
+      alert("you already on the list dawg, nice try tho");
+      console.log("did not push = " + this.ME.name);
+    } else {
+      console.log("pushed= " + this.ME.name);
+      this.http.post(this.share.apiRoot + "/share/sharedUsers", this.ME).subscribe(data => {
+        console.log(data);
+      });
+      this.http.get(this.share.apiRoot + "/share/").subscribe(data => {
+        console.log(data);
+      });
+    }
+
+
+
+
+
   }
 
-  shareYou() {
-    if (this.room.sharedUsers.includes(ME)) {
-      alert("you already on the list dawg, nice try tho");
-      console.log("did not push = " + ME.name);
-    } else {
-      console.log("pushed= " + ME.name);
-      this.room.sharedUsers.push(ME);
-    }
-  }
-  other: Person;
   viewExercises(Other: Person) {
     this.other = Other;
     this.otherExe = Other.myExercises;

@@ -4,7 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
 import { Router } from "@angular/router";
 import { Person } from "../models/Person";
-import { ME } from "../loginr/loginr.component";
+import { SharingService, ME } from "../models/sharing.service";
 import { Exercise } from "../models/Exercise";
 declare const FB: any;
 @Component({
@@ -14,7 +14,7 @@ declare const FB: any;
 })
 export class YouComponent implements OnInit {
   ME = ME;
-  constructor(private http: Http, private router: Router) {}
+  constructor(private http: Http, private router: Router, private shareService: SharingService) { }
 
   ngOnInit() {
     if (ME == null) {
@@ -22,7 +22,7 @@ export class YouComponent implements OnInit {
     }
   }
 
-  update() {}
+  update() { }
 
   maxBench(a: number) {
     ME.maxBench = a;

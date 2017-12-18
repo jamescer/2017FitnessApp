@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Players
+                </div>
+                <ul class="list-group list-group-flush" id="players">
+                    <li *ngFor="let x of room.players; index as i" class="list-group-item">
+                        <img [src]="x.picture" style="width: 26px;" class="rounded" />
+                        <span *ngIf="i == room.dealer" class="badge badge-info">dealer</span>
+                        {{x.name}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    My Quotes
+                </div>
+                <ul class="list-group list-group-flush" id="my-quotes">
+                    <li *ngFor="let x of me.quotes; index as i" class="list-group-item" [ngClass]="{disabled: me.id == room.dealer || myQuote()}"
+                        (click)="submitQuote($event, x, i)">
+                        {{x.text}}
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <img [src]="fbImage" />
+            <app-picture-chooser title="Facebook Pictures" [images]="fbImages" (selected)="fbImage =  $event.link"></app-picture-chooser>
+            <div class="card">
+                <div class="card-body">
+                    <img class="card-img-top" [src]="room.picture" alt="Card image cap" id="picture">
+                    <a *ngIf="me.id == room.dealer && chosenQuote()" href="#" class="btn btn-primary" (click)="flipPicture($event)">Flip a new card</a>
+                    <a *ngIf="me.id == room.dealer && chosenQuote()" href="#" class="btn btn-success" (click)="showFBPictures($event)">Pick FB Picture</a>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Played Quotes
+                        </div>
+                        <ul class="list-group list-group-flush" id="played-quotes">
+                            <li *ngFor="let x of room.quotes; index as i" class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{'list-group-item-success': x.chosen}">
+                                {{x.text}}
+                                <a href="#" class="btn btn-sm btn-primary" *ngIf="!chosenQuote() && me.id == room.dealer" (click)="chooseQuote($event, i)">Choose</a>
+                                <span *ngIf="!chosenQuote() && me.id != room.dealer" class="badge badge-secondary">hidden</span>
+                                <span *ngIf="chosenQuote()" class="badge badge-info">{{x.player}}</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
