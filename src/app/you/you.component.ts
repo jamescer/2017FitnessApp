@@ -25,6 +25,7 @@ export class YouComponent implements OnInit {
       this.router.navigate(["/login"]);
     }
     this.me = this.share.me;
+    console.log("MyExercise: = "+this.me.myExercises);
   }
 
   update() {}

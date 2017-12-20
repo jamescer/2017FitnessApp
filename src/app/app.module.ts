@@ -19,26 +19,25 @@ import { Person } from "./models/Person";
 import { SharingService } from "./models/sharing.service";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { PlayComponent } from './play/play.component';
-import { GameService } from './models/game.service';
-import { PictureChooserComponent } from './widgets/picture-chooser/picture-chooser.component';
+import { PlayComponent } from "./play/play.component";
+import { GameService } from "./models/game.service";
+import { PictureChooserComponent } from "./widgets/picture-chooser/picture-chooser.component";
 
 @NgModule({
   declarations: [
-    AppComponent, PictureChooserComponent, PlayComponent, 
+    AppComponent,
+    PictureChooserComponent,
+    PlayComponent,
     HeadComponent,
     NavComponent,
     IndexComponent,
     LoginrComponent,
-    // PictureChooserComponent,
     FooterComponent,
     YouComponent,
     WorkoutsComponent,
     ExercisesComponent,
     WidgetsComponent,
     SharingComponent,
-    PlayComponent
-    // ModelsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,12 +50,11 @@ import { PictureChooserComponent } from './widgets/picture-chooser/picture-choos
       { path: "you", component: YouComponent },
       { path: "workouts", component: WorkoutsComponent },
       { path: "exercises", component: ExercisesComponent },
-      { path: "sharing", component: SharingComponent }, 
-      { path: "play", component: PlayComponent },
+      { path: "sharing", component: SharingComponent },
       { path: "", pathMatch: "full", redirectTo: "/home" }
     ])
   ],
-  providers: [LoginrComponent, GameService,SharingService],
+  providers: [ SharingService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -26,16 +26,20 @@ export class SharingComponent implements OnInit {
       this.router.navigate(["/login"]);
     }
     this.me = this.share.me;
-    setInterval(() => this.update(), 1000);
+    this.other = this.me;
+    this.http.get(this.share.apiRoot + "/share/room").subscribe(data => {
+      this.room = data.json();
+    });
+    //setInterval(() => this.update(), 1000);
   }
   update() {
     this.http.get(this.share.apiRoot + "/share/room").subscribe(data => {
       this.room = data.json();
-      console.log(this.room.players);
     });
   }
-  viewExercises(Other: Person) {
-    this.other = Other;
-    this.otherExe = Other.myExercises;
+  viewExercises(OtherINPUT: Person, int: number) {
+    this.other = this.room.players.find(x => x.name == OtherINPUT.name);
+
+    this.otherExe = this.other.myExercises;
   }
 }

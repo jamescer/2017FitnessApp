@@ -12,7 +12,7 @@ export class Person {
   id: number;
   picture: string;
   name: string;
-  myExercises: Exercise[] = [];
+  myExercises: Exercise[];
   exerciseList: Exercise[] = [
     { name: "Bench Press", time: "0 minutes", sets: 0, reps: 0, weight: 0 },
     { name: "Deadlift", time: "0 minutes", sets: 0, reps: 0, weight: 0 },

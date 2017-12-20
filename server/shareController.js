@@ -4,6 +4,7 @@ const share = require("./shareObject");
 const router = express.Router();
 
 router
+  .get("/share", (req, res) => res.send(share))
   .get("/room", (req, res) => res.send(share.room))
   .post("/room/players", (req, res) => {
     if (req.body.password == "password") {

@@ -20,7 +20,7 @@ import {
   templateUrl: "./exercises.component.html",
   styleUrls: ["./exercises.component.scss"],
   animations: [
-    trigger("my-Exercises", [
+    trigger("my-Exercises-Effects", [
       transition("* => *", [
         query(":enter", style({ opacity: 0 }), { optional: true }),
         query(

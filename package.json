@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "sass": "node-sass jquery-mockup/src --output jquery-mockup/dist --watch",
-    "webpack:main": "webpack jquery-mockup/src/main.js jquery-mockup/dist/bundle.js --optimize-minimize --watch",
+    "webpack:main":
+      "webpack jquery-mockup/src/main.js jquery-mockup/dist/bundle.js --optimize-minimize --watch",
     "server": "nodemon --watch server server/index.js",
-    "ngc9": "ng serve --public fitnessapp20173-zessed.c9users.io:8080 --host localhost --port $PORT",
+    "ngc9":
+      "ng serve --public fitnessapp20173-zessed.c9users.io:8080 --host localhost --port $PORT",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

@@ -13,7 +13,7 @@ export class SharingService {
 
   constructor(private http: Http, private router: Router) {
     this.apiRoot = `//${window.location.hostname}:8081`;
-    //this.apiRoot = `localhost:4200`;
+
     window.fbAsyncInit = function() {
       FB.init({
         appId: "246977922503152",
@@ -77,6 +77,5 @@ export class SharingService {
         },
         () => {}
       );
-      console.log(this.me.myExercises);
   }
 }
