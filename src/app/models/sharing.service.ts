@@ -60,11 +60,12 @@ export class SharingService {
   }
 
   login(name: string, password: string, fbid?: string, picture?: string) {
-    ME = new Person(name, fbid, picture);
-    this.me = ME;
     this.http
-      .post(this.apiRoot + "/players", {
-        ME
+      .post(this.apiRoot + "/share/room/players", {
+        name,
+        password,
+        fbid,
+        picture
       })
       .subscribe(
         data => {
@@ -76,6 +77,6 @@ export class SharingService {
         },
         () => {}
       );
+      console.log(this.me.myExercises);
   }
 }
-export var ME: Person;

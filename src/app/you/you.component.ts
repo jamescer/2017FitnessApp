@@ -4,7 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { HttpModule } from "@angular/http";
 import { Router } from "@angular/router";
 import { Person } from "../models/Person";
-import { SharingService, ME } from "../models/sharing.service";
+import { SharingService } from "../models/sharing.service";
 import { Exercise } from "../models/Exercise";
 declare const FB: any;
 @Component({
@@ -13,28 +13,33 @@ declare const FB: any;
   styleUrls: ["./you.component.scss"]
 })
 export class YouComponent implements OnInit {
-  ME = ME;
-  constructor(private http: Http, private router: Router, private shareService: SharingService) { }
+  me: Person;
+  constructor(
+    private http: Http,
+    private router: Router,
+    private share: SharingService
+  ) {}
 
   ngOnInit() {
-    if (ME == null) {
+    if (this.share.me == null) {
       this.router.navigate(["/login"]);
     }
+    this.me = this.share.me;
   }
 
-  update() { }
+  update() {}
 
   maxBench(a: number) {
-    ME.maxBench = a;
+    this.me.maxBench = a;
   }
   maxSquat(a: number) {
-    ME.maxSquat = a;
+    this.me.maxSquat = a;
   }
   maxDeadlift(a: number) {
-    ME.maxDeadlift = a;
+    this.me.maxDeadlift = a;
   }
   logout() {
-    
+    this.share.me = null;
     this.router.navigate(["/login"]);
   }
 }

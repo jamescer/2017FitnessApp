@@ -3,7 +3,7 @@ import { Http } from "@angular/http";
 import { Router } from "@angular/router";
 import { Person } from "../models/Person";
 import { Exercise } from "../models/Exercise";
-import { SharingService, ME } from "../models/sharing.service";
+import { SharingService } from "../models/sharing.service";
 
 import {
   trigger,
@@ -68,22 +68,22 @@ import {
   ]
 })
 export class ExercisesComponent implements OnInit {
-  constructor(private router: Router,private shareService: SharingService) { }
-  ME = ME;
+  constructor(private router: Router, private share: SharingService) {}
+  me: Person;
   ngOnInit() {
-    if (ME == null) {
+    if (this.share.me == null) {
       this.router.navigate(["/login"]);
     }
+    this.me = this.share.me;
   }
   AddToDone(exerciseName: string, reps: number, weight: number) {
-   
-    ME.myExercises.push(new Exercise(exerciseName, "zero", 3, 12, 99));
+    this.me.myExercises.push(new Exercise(exerciseName, "zero", 3, 12, 99));
     console.log(exerciseName + ", " + reps + ", " + weight);
   }
   removeFromMyExercises(key: Exercise) {
-    var index = ME.myExercises.indexOf(key, 0);
+    var index = this.me.myExercises.indexOf(key, 0);
     if (index > -1) {
-      ME.myExercises.splice(index, 1);
+      this.me.myExercises.splice(index, 1);
     }
   }
 }

@@ -1,8 +1,8 @@
 <div class="container">
 
   <div class="jumbotron">
-    <h1 id="greetings" class="display-3">Hello {{ME.name}}!
-      <img [src]="ME.picture" style="width: 56px;" class="rounded" />
+    <h1 id="greetings" class="display-3">Hello {{this.me.name}}!
+      <img [src]="this.me.picture" style="width: 56px;" class="rounded" />
     </h1>
 
     <p class="lead">This is where you can manage your information.</p>
@@ -26,8 +26,9 @@
             <span class="input-group-addon" id="MaxBench">Max:</span>
             <output id="maxoutput" placeholder="0">{{benchWeight * (1 + benchReps / 30)}}</output>
             <!-- <input type="text" class="form-control" placeholder="{{benchWeight * (1 + benchReps / 30)}}" aria-describedby="basic-addon3"> -->
-          </div> <div class="card-body text-center">
-            <a  class="btn btn-primary">Current Max: {{ME.maxBench}}</a>
+          </div>
+          <div class="card-body text-center">
+            <a class="btn btn-primary">Current Max: {{this.me.maxBench}}</a>
           </div>
           <div class="card-body text-center">
             <a (click)="maxBench(benchWeight * (1 + benchReps / 30))" class="btn btn-primary">Save</a>
@@ -53,8 +54,9 @@
             <output id="maxoutput" placeholder="0">{{squatWeight * (1 + squatReps / 30)}}</output>
 
             <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
-          </div> <div class="card-body text-center">
-            <a  class="btn btn-primary">Current Max: {{ME.maxSquat}}</a>
+          </div>
+          <div class="card-body text-center">
+            <a class="btn btn-primary">Current Max: {{this.me.maxSquat}}</a>
           </div>
           <div class="card-body text-center">
             <a (click)="maxSquat(squatWeight * (1 + squatReps / 30))" class="btn btn-primary">Save</a>
@@ -77,18 +79,19 @@
           </div>
           <div class="input-group">
             <span class="input-group-addon" id="MaxDeadlift">Max:</span>
-            <output  text-align="center" id="maxDL" placeholder="0">{{DLWeight * (1 + DLReps / 30)}}</output>
+            <output text-align="center" id="maxDL" placeholder="0">{{DLWeight * (1 + DLReps / 30)}}</output>
             <!-- <input type="text" class="form-control" id="MAX" placeholder="Lbs/Kilograms" aria-describedby="basic-addon3"> -->
           </div>
           <div class="card-body text-center">
-            <a  class="btn btn-primary">Current Max: {{ME.maxDeadlift}}</a>
+            <a class="btn btn-primary">Current Max: {{this.me.maxDeadlift}}</a>
           </div>
           <div class="card-body text-center">
             <a (click)="maxDeadlift(DLWeight * (1 + DLReps / 30))" class="btn btn-primary">Save</a>
           </div>
         </div>
-        
+
       </div>
     </div>
-  </div><a class="btn btn-primary" (click)="logout()">Log out</a>
+  </div>
+  <a class="btn btn-primary" (click)="logout()">Log out</a>
 </div>
