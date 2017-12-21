@@ -80,10 +80,10 @@ export class ExercisesComponent implements OnInit {
     const data = { exerciseName, reps, weight };
     this.http.post(this.share.apiRoot + "/share/myExercises", data).subscribe(res => {
       console.log(data);
-      //this.me.myExercises.push(res.json());
+      this.me.myExercises.push(res.json());
     });
-    
-    this.me.myExercises.push(new Exercise(exerciseName, "zero", 3, 12, 99));
+
+    //this.me.myExercises.push(new Exercise(exerciseName, "zero", 3, 12, 99));
     //console.log(exerciseName + ", " + reps + ", " + weight);
   }
   removeFromMyExercises(key: Exercise) {

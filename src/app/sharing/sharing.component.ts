@@ -37,12 +37,11 @@ export class SharingComponent implements OnInit {
       this.room = data.json();
     });
   }
-  viewExercises(OtherINPUT: Person) {
-    
-    this.otherExe = OtherINPUT.myExercises;
-    // this.http.post(this.share.apiRoot + "/share/otherExercises", OtherINPUT.myExercises);
-    // this.http.get(this.share.apiRoot + "/share/otherExercises").subscribe(data => {
-    //   this.otherExe = data.json();
-    // });
+  viewExercises(O: Person) {
+    console.log(O);
+  // this.http.post(this.share.apiRoot + "/share/room/other", O.myExercises);
+   this.http.get(this.share.apiRoot + "/share/room/other").subscribe(data => {
+      this.other = data.json();
+    });
   }
 }

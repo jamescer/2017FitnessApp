@@ -36,6 +36,8 @@ export class SharingService {
       js.src = "https://connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     })(document, "script", "facebook-jssdk");
+
+
   }
 
   loginFB() {
@@ -61,12 +63,12 @@ export class SharingService {
   }
 
   login(name: string, password: string, fbid?: string, picture?: string) {
-    let myExe: Exercise[];
+    let myExercises: Exercise[];
     this.http
       .post(this.apiRoot + "/share/room/players", {
         name,
         password,
-        myExe,
+        myExercises,
         fbid,
         picture
       })
