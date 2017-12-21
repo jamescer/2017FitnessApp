@@ -68,7 +68,7 @@ import {
   ]
 })
 export class ExercisesComponent implements OnInit {
-  constructor(private router: Router, private share: SharingService) {}
+  constructor(private http: Http, private router: Router, private share: SharingService) { }
   me: Person;
   ngOnInit() {
     if (this.share.me == null) {
@@ -77,8 +77,14 @@ export class ExercisesComponent implements OnInit {
     this.me = this.share.me;
   }
   AddToDone(exerciseName: string, reps: number, weight: number) {
+    const data = { exerciseName, reps, weight };
+    this.http.post(this.share.apiRoot + "/share/myExercises", data).subscribe(res => {
+      console.log(data);
+      //this.me.myExercises.push(res.json());
+    });
+    
     this.me.myExercises.push(new Exercise(exerciseName, "zero", 3, 12, 99));
-    console.log(exerciseName + ", " + reps + ", " + weight);
+    //console.log(exerciseName + ", " + reps + ", " + weight);
   }
   removeFromMyExercises(key: Exercise) {
     var index = this.me.myExercises.indexOf(key, 0);

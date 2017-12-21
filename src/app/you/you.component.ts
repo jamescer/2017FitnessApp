@@ -18,17 +18,17 @@ export class YouComponent implements OnInit {
     private http: Http,
     private router: Router,
     private share: SharingService
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (this.share.me == null) {
       this.router.navigate(["/login"]);
     }
     this.me = this.share.me;
-    console.log("MyExercise: = "+this.me.myExercises);
+    console.log("MyExercise: = " + this.share.me.myExercises[1]);
   }
 
-  update() {}
+  update() { }
 
   maxBench(a: number) {
     this.me.maxBench = a;

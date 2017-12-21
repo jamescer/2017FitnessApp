@@ -12,14 +12,14 @@ import { SharingService } from "../models/sharing.service";
 export class SharingComponent implements OnInit {
   other: Person;
   room = new Room();
-  otherExe: Exercise[];
+  otherExe: any[];
   apiRoot: String;
   me: Person;
   constructor(
     private http: Http,
     public share: SharingService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     if (this.share.me == null) {
@@ -37,9 +37,12 @@ export class SharingComponent implements OnInit {
       this.room = data.json();
     });
   }
-  viewExercises(OtherINPUT: Person, int: number) {
-    this.other = this.room.players.find(x => x.name == OtherINPUT.name);
-
-    this.otherExe = this.other.myExercises;
+  viewExercises(OtherINPUT: Person) {
+    
+    this.otherExe = OtherINPUT.myExercises;
+    // this.http.post(this.share.apiRoot + "/share/otherExercises", OtherINPUT.myExercises);
+    // this.http.get(this.share.apiRoot + "/share/otherExercises").subscribe(data => {
+    //   this.otherExe = data.json();
+    // });
   }
 }

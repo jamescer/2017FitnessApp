@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Person } from "./Person";
 import { Http } from "@angular/http";
 import { Router } from "@angular/router";
+import { Exercise } from "./Exercise";
 
 declare var window: any;
 declare var FB: any;
@@ -14,7 +15,7 @@ export class SharingService {
   constructor(private http: Http, private router: Router) {
     this.apiRoot = `//${window.location.hostname}:8081`;
 
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
       FB.init({
         appId: "246977922503152",
         cookie: true,
@@ -24,7 +25,7 @@ export class SharingService {
       FB.AppEvents.logPageView();
     };
 
-    (function(d, s, id) {
+    (function (d, s, id) {
       var js,
         fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
@@ -43,7 +44,7 @@ export class SharingService {
         if (response.authResponse) {
           //console.log(response);
           FB.api("/me?fields=name,email,picture", (response: any) => {
-            //console.log(response);
+
             this.login(
               response.name,
               "password",
@@ -60,22 +61,27 @@ export class SharingService {
   }
 
   login(name: string, password: string, fbid?: string, picture?: string) {
+    let myExe: Exercise[];
     this.http
       .post(this.apiRoot + "/share/room/players", {
         name,
         password,
+        myExe,
         fbid,
         picture
       })
       .subscribe(
-        data => {
-          this.me = data.json();
-          console.log(data);
-        },
-        err => {
-          console.log(err);
-        },
-        () => {}
+      data => {
+        this.me = data.json();
+        this.http.get(this.apiRoot + "/share/myExercises").subscribe(data => {
+          this.me.myExercises = data.json();
+        });
+        console.log(data);
+      },
+      err => {
+        console.log(err);
+      },
+      () => { }
       );
   }
 }
