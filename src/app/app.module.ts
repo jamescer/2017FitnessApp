@@ -18,10 +18,12 @@ import { SharingComponent } from "./sharing/sharing.component";
 import { Person } from "./models/Person";
 import { SharingService } from "./models/sharing.service";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxTypeaheadModule } from 'ngx-typeahead';
 import { PlayComponent } from "./play/play.component";
 import { GameService } from "./models/game.service";
 import { PictureChooserComponent } from "./widgets/picture-chooser/picture-chooser.component";
+import { TypaheadComponent } from "./typahead/typahead.component";
 
 @NgModule({
   declarations: [
@@ -38,8 +40,11 @@ import { PictureChooserComponent } from "./widgets/picture-chooser/picture-choos
     ExercisesComponent,
     WidgetsComponent,
     SharingComponent,
+    TypaheadComponent
   ],
   imports: [
+    NgbModule.forRoot(),
+    NgxTypeaheadModule,
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
@@ -51,10 +56,11 @@ import { PictureChooserComponent } from "./widgets/picture-chooser/picture-choos
       { path: "workouts", component: WorkoutsComponent },
       { path: "exercises", component: ExercisesComponent },
       { path: "sharing", component: SharingComponent },
+      { path: "typeahead", component: TypaheadComponent },
       { path: "", pathMatch: "full", redirectTo: "/home" }
     ])
   ],
-  providers: [ SharingService],
+  providers: [SharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

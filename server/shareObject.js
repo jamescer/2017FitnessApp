@@ -1,11 +1,11 @@
-
-
-
 const share = {
   room: {
-    players: [], otherExercises: [],
+    players: [],
+    otherExercises: []
   },
-  myExercises: []
+  user: {
+    myExercises: []
+  }
 };
 
 module.exports = share;

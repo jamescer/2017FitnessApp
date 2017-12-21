@@ -15,7 +15,7 @@ export class SharingService {
   constructor(private http: Http, private router: Router) {
     this.apiRoot = `//${window.location.hostname}:8081`;
 
-    window.fbAsyncInit = function () {
+    window.fbAsyncInit = function() {
       FB.init({
         appId: "246977922503152",
         cookie: true,
@@ -25,7 +25,7 @@ export class SharingService {
       FB.AppEvents.logPageView();
     };
 
-    (function (d, s, id) {
+    (function(d, s, id) {
       var js,
         fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
@@ -36,8 +36,6 @@ export class SharingService {
       js.src = "https://connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     })(document, "script", "facebook-jssdk");
-
-
   }
 
   loginFB() {
@@ -46,7 +44,6 @@ export class SharingService {
         if (response.authResponse) {
           //console.log(response);
           FB.api("/me?fields=name,email,picture", (response: any) => {
-
             this.login(
               response.name,
               "password",
@@ -73,17 +70,20 @@ export class SharingService {
         picture
       })
       .subscribe(
-      data => {
-        this.me = data.json();
-        this.http.get(this.apiRoot + "/share/myExercises").subscribe(data => {
-          this.me.myExercises = data.json();
-        });
-        console.log(data);
-      },
-      err => {
-        console.log(err);
-      },
-      () => { }
+        data => {
+          this.me = data.json();
+          this.http
+            .get(this.apiRoot + "/share/user/myExercises")
+            .subscribe(data => {
+              // this.me.myExercises = data.json();
+              this.me.myExercises = [];
+            });
+          console.log(data);
+        },
+        err => {
+          console.log(err);
+        },
+        () => {}
       );
   }
 }

@@ -1,0 +1,11 @@
+<div class="container">
+  <div id="grad" class="jumbotron">
+    <div class="row">
+
+      <label for="typeahead-basic">Search for a User that is curently logged in:</label>
+      <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
+      <hr>
+      <pre>Model: {{ model | json }}</pre>
+    </div>
+  </div>
+</div>

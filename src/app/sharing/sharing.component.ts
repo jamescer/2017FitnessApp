@@ -19,7 +19,7 @@ export class SharingComponent implements OnInit {
     private http: Http,
     public share: SharingService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     if (this.share.me == null) {
@@ -39,8 +39,10 @@ export class SharingComponent implements OnInit {
   }
   viewExercises(O: Person) {
     console.log(O);
-  // this.http.post(this.share.apiRoot + "/share/room/other", O.myExercises);
-   this.http.get(this.share.apiRoot + "/share/room/other").subscribe(data => {
+
+    this.http.post(this.share.apiRoot + "/share/room/otherExercises", O);
+    this.http.get(this.share.apiRoot + "/share/room/other").subscribe(data => {
+      console.log(data);
       this.other = data.json();
     });
   }

@@ -78,7 +78,7 @@ export class ExercisesComponent implements OnInit {
   }
   AddToDone(exerciseName: string, reps: number, weight: number) {
     const data = { exerciseName, reps, weight };
-    this.http.post(this.share.apiRoot + "/share/myExercises", data).subscribe(res => {
+    this.http.post(this.share.apiRoot + "/share/user/myExercises", data).subscribe(res => {
       console.log(data);
       this.me.myExercises.push(res.json());
     });
