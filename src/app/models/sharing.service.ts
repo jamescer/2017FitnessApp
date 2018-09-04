@@ -15,7 +15,7 @@ export class SharingService {
   constructor(private http: Http, private router: Router) {
     this.apiRoot = `//${window.location.hostname}:8081`;
 
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
       FB.init({
         appId: "246977922503152",
         cookie: true,
@@ -25,7 +25,7 @@ export class SharingService {
       FB.AppEvents.logPageView();
     };
 
-    (function(d, s, id) {
+    (function (d, s, id) {
       var js,
         fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {
@@ -50,6 +50,8 @@ export class SharingService {
               response.id,
               response.picture.data.url
             );
+            //console.log("name: " + response.name + "");
+
           });
         } else {
           console.log("User cancelled login or did not fully authorize.");
@@ -77,13 +79,14 @@ export class SharingService {
             .subscribe(data => {
               // this.me.myExercises = data.json();
               this.me.myExercises = [];
+
             });
           console.log(data);
         },
         err => {
           console.log(err);
         },
-        () => {}
+        () => { }
       );
   }
 }

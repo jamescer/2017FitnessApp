@@ -8,7 +8,7 @@ import { Person } from "../models/Person";
 import { Http } from "@angular/http";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs/Observable";
-import { NgxTypeaheadModule } from "ngx-typeahead";
+// import { NgxTypeaheadModule } from "ngx-typeahead";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/debounceTime";
 import "rxjs/add/operator/distinctUntilChanged";

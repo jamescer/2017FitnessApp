@@ -19,7 +19,7 @@ import { Person } from "./models/Person";
 import { SharingService } from "./models/sharing.service";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { NgxTypeaheadModule } from 'ngx-typeahead';
+// import { NgxTypeaheadModule } from 'ngx-typeahead';
 import { PlayComponent } from "./play/play.component";
 import { GameService } from "./models/game.service";
 import { PictureChooserComponent } from "./widgets/picture-chooser/picture-chooser.component";
@@ -44,7 +44,7 @@ import { TypaheadComponent } from "./typahead/typahead.component";
   ],
   imports: [
     NgbModule.forRoot(),
-    NgxTypeaheadModule,
+    // NgxTypeaheadModule,
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,
@@ -56,7 +56,7 @@ import { TypaheadComponent } from "./typahead/typahead.component";
       { path: "workouts", component: WorkoutsComponent },
       { path: "exercises", component: ExercisesComponent },
       { path: "sharing", component: SharingComponent },
-      { path: "typeahead", component: TypaheadComponent },
+      // { path: "typeahead", component: TypaheadComponent },
       { path: "", pathMatch: "full", redirectTo: "/home" }
     ])
   ],
