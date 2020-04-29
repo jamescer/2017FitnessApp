@@ -34,7 +34,7 @@
         "bootstrap-4": "^4.0.0",
         "core-js": "^2.4.1",
         "express": "^4.15.4",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "node-sass": "^4.13.0",
         "popper.js": "^1.12.5",
         "react": "^16.2.0",
